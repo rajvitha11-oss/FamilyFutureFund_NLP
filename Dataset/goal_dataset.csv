@@ -1,0 +1,415 @@
+﻿id,text,goal,category
+1,I want to save ₹3 lakhs for daughter higher studies in 2 years.,Higher Education,Education
+2,son higher education kosam 24 months lo 3 lakh rupees save cheyyali.,Higher Education,Education
+3,Maa family my child's college fees kosam within two years lo 300000 pakkana pettali.,Higher Education,Education
+4,I need ₹5 lakhs within in 18 months for maa daughter education.,Higher Education,Education
+5,We want to keep aside 5 lakh rupees in 1 year for maa son higher studies.,Higher Education,Education
+6,"Next 12 months, we need 500000 for my daughter's future studies.",Higher Education,Education
+7,I am planning to save ₹2 lakhs over within 6 months for daughter higher studies.,Higher Education,Education
+8,Nenu son higher education kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Higher Education,Education
+9,"Maa my child's college fees kosam 200000 save cheyyali, target 2 years.",Higher Education,Education
+10,"Future lo maa daughter education kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Higher Education,Education
+11,"For our family, I want to arrange 3 lakh rupees in within two years for maa son higher studies.",Higher Education,Education
+12,I want a savings goal of 300000 for my daughter's future studies by in 18 months.,Higher Education,Education
+13,"By 1 year, I want to have ₹5 lakhs for daughter higher studies.",Higher Education,Education
+14,Maa goal son higher education; target 5 lakh rupees; time 12 months.,Higher Education,Education
+15,I am saving 500000 for my child's college fees and want to reach it in within 6 months.,Higher Education,Education
+16,We have a future plan for maa daughter education and need ₹2 lakhs in 6 months.,Higher Education,Education
+17,I need to build 2 lakh rupees savings for maa son higher studies over 2 years.,Higher Education,Education
+18,Maa future goal my daughter's future studies kosam 200000 collect cheyyali within 24 months.,Higher Education,Education
+19,Can I save ₹3 lakhs for daughter higher studies within within two years?,Higher Education,Education
+20,Our family wants to arrange 3 lakh rupees for son higher education in in 18 months.,Higher Education,Education
+21,I am keeping 300000 aside for my child's college fees for the next 1 year.,Higher Education,Education
+22,Nenu maa daughter education kosam next 12 months lo ₹5 lakhs save cheyyali.,Higher Education,Education
+23,"Maa family future kosam maa son higher studies ki 5 lakh rupees required, period within 6 months.",Higher Education,Education
+24,I want to create a fund of 500000 for my daughter's future studies in 6 months.,Higher Education,Education
+25,We should save ₹2 lakhs for daughter higher studies before 2 years.,Higher Education,Education
+26,I want to save ₹3 lakhs for children school fees in 2 years.,School Fees,Education
+27,my daughter's school fees kosam 24 months lo 3 lakh rupees save cheyyali.,School Fees,Education
+28,Maa family my son's school fees kosam within two years lo 300000 pakkana pettali.,School Fees,Education
+29,I need ₹5 lakhs within in 18 months for maa pillala school fees.,School Fees,Education
+30,We want to keep aside 5 lakh rupees in 1 year for school education expenses.,School Fees,Education
+31,"Next 12 months, we need 500000 for next year's school fees.",School Fees,Education
+32,I am planning to save ₹2 lakhs over within 6 months for children school fees.,School Fees,Education
+33,Nenu my daughter's school fees kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,School Fees,Education
+34,"Maa my son's school fees kosam 200000 save cheyyali, target 2 years.",School Fees,Education
+35,"Future lo maa pillala school fees kosam ₹3 lakhs kavali, so 24 months lo save chestha.",School Fees,Education
+36,"For our family, I want to arrange 3 lakh rupees in within two years for school education expenses.",School Fees,Education
+37,I want a savings goal of 300000 for next year's school fees by in 18 months.,School Fees,Education
+38,"By 1 year, I want to have ₹5 lakhs for children school fees.",School Fees,Education
+39,Maa goal my daughter's school fees; target 5 lakh rupees; time 12 months.,School Fees,Education
+40,I am saving 500000 for my son's school fees and want to reach it in within 6 months.,School Fees,Education
+41,We have a future plan for maa pillala school fees and need ₹2 lakhs in 6 months.,School Fees,Education
+42,I need to build 2 lakh rupees savings for school education expenses over 2 years.,School Fees,Education
+43,Maa future goal next year's school fees kosam 200000 collect cheyyali within 24 months.,School Fees,Education
+44,Can I save ₹3 lakhs for children school fees within within two years?,School Fees,Education
+45,Our family wants to arrange 3 lakh rupees for my daughter's school fees in in 18 months.,School Fees,Education
+46,I am keeping 300000 aside for my son's school fees for the next 1 year.,School Fees,Education
+47,Nenu maa pillala school fees kosam next 12 months lo ₹5 lakhs save cheyyali.,School Fees,Education
+48,"Maa family future kosam school education expenses ki 5 lakh rupees required, period within 6 months.",School Fees,Education
+49,I want to create a fund of 500000 for next year's school fees in 6 months.,School Fees,Education
+50,We should save ₹2 lakhs for children school fees before 2 years.,School Fees,Education
+51,I want to save ₹3 lakhs for buy a house in 2 years.,House Purchase,Housing
+52,purchase our own house kosam 24 months lo 3 lakh rupees save cheyyali.,House Purchase,Housing
+53,Maa family new home kosam within two years lo 300000 pakkana pettali.,House Purchase,Housing
+54,I need ₹5 lakhs within in 18 months for our family house.,House Purchase,Housing
+55,We want to keep aside 5 lakh rupees in 1 year for maa own house.,House Purchase,Housing
+56,"Next 12 months, we need 500000 for home purchase.",House Purchase,Housing
+57,I am planning to save ₹2 lakhs over within 6 months for buy a house.,House Purchase,Housing
+58,Nenu purchase our own house kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,House Purchase,Housing
+59,"Maa new home kosam 200000 save cheyyali, target 2 years.",House Purchase,Housing
+60,"Future lo our family house kosam ₹3 lakhs kavali, so 24 months lo save chestha.",House Purchase,Housing
+61,"For our family, I want to arrange 3 lakh rupees in within two years for maa own house.",House Purchase,Housing
+62,I want a savings goal of 300000 for home purchase by in 18 months.,House Purchase,Housing
+63,"By 1 year, I want to have ₹5 lakhs for buy a house.",House Purchase,Housing
+64,Maa goal purchase our own house; target 5 lakh rupees; time 12 months.,House Purchase,Housing
+65,I am saving 500000 for new home and want to reach it in within 6 months.,House Purchase,Housing
+66,We have a future plan for our family house and need ₹2 lakhs in 6 months.,House Purchase,Housing
+67,I need to build 2 lakh rupees savings for maa own house over 2 years.,House Purchase,Housing
+68,Maa future goal home purchase kosam 200000 collect cheyyali within 24 months.,House Purchase,Housing
+69,Can I save ₹3 lakhs for buy a house within within two years?,House Purchase,Housing
+70,Our family wants to arrange 3 lakh rupees for purchase our own house in in 18 months.,House Purchase,Housing
+71,I am keeping 300000 aside for new home for the next 1 year.,House Purchase,Housing
+72,Nenu our family house kosam next 12 months lo ₹5 lakhs save cheyyali.,House Purchase,Housing
+73,"Maa family future kosam maa own house ki 5 lakh rupees required, period within 6 months.",House Purchase,Housing
+74,I want to create a fund of 500000 for home purchase in 6 months.,House Purchase,Housing
+75,We should save ₹2 lakhs for buy a house before 2 years.,House Purchase,Housing
+76,I want to save ₹3 lakhs for renovate our house in 2 years.,House Renovation,Housing
+77,repair our home kosam 24 months lo 3 lakh rupees save cheyyali.,House Renovation,Housing
+78,Maa family house renovation kosam within two years lo 300000 pakkana pettali.,House Renovation,Housing
+79,I need ₹5 lakhs within in 18 months for home improvement.,House Renovation,Housing
+80,We want to keep aside 5 lakh rupees in 1 year for maa inti renovation.,House Renovation,Housing
+81,"Next 12 months, we need 500000 for renovation of our old house.",House Renovation,Housing
+82,I am planning to save ₹2 lakhs over within 6 months for renovate our house.,House Renovation,Housing
+83,Nenu repair our home kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,House Renovation,Housing
+84,"Maa house renovation kosam 200000 save cheyyali, target 2 years.",House Renovation,Housing
+85,"Future lo home improvement kosam ₹3 lakhs kavali, so 24 months lo save chestha.",House Renovation,Housing
+86,"For our family, I want to arrange 3 lakh rupees in within two years for maa inti renovation.",House Renovation,Housing
+87,I want a savings goal of 300000 for renovation of our old house by in 18 months.,House Renovation,Housing
+88,"By 1 year, I want to have ₹5 lakhs for renovate our house.",House Renovation,Housing
+89,Maa goal repair our home; target 5 lakh rupees; time 12 months.,House Renovation,Housing
+90,I am saving 500000 for house renovation and want to reach it in within 6 months.,House Renovation,Housing
+91,We have a future plan for home improvement and need ₹2 lakhs in 6 months.,House Renovation,Housing
+92,I need to build 2 lakh rupees savings for maa inti renovation over 2 years.,House Renovation,Housing
+93,Maa future goal renovation of our old house kosam 200000 collect cheyyali within 24 months.,House Renovation,Housing
+94,Can I save ₹3 lakhs for renovate our house within within two years?,House Renovation,Housing
+95,Our family wants to arrange 3 lakh rupees for repair our home in in 18 months.,House Renovation,Housing
+96,I am keeping 300000 aside for house renovation for the next 1 year.,House Renovation,Housing
+97,Nenu home improvement kosam next 12 months lo ₹5 lakhs save cheyyali.,House Renovation,Housing
+98,"Maa family future kosam maa inti renovation ki 5 lakh rupees required, period within 6 months.",House Renovation,Housing
+99,I want to create a fund of 500000 for renovation of our old house in 6 months.,House Renovation,Housing
+100,We should save ₹2 lakhs for renovate our house before 2 years.,House Renovation,Housing
+101,I want to save ₹3 lakhs for buy a car in 2 years.,Car,Vehicle
+102,purchase a family car kosam 24 months lo 3 lakh rupees save cheyyali.,Car,Vehicle
+103,Maa family new car kosam within two years lo 300000 pakkana pettali.,Car,Vehicle
+104,I need ₹5 lakhs within in 18 months for car down payment.,Car,Vehicle
+105,We want to keep aside 5 lakh rupees in 1 year for family vehicle.,Car,Vehicle
+106,"Next 12 months, we need 500000 for maa car.",Car,Vehicle
+107,I am planning to save ₹2 lakhs over within 6 months for buy a car.,Car,Vehicle
+108,Nenu purchase a family car kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Car,Vehicle
+109,"Maa new car kosam 200000 save cheyyali, target 2 years.",Car,Vehicle
+110,"Future lo car down payment kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Car,Vehicle
+111,"For our family, I want to arrange 3 lakh rupees in within two years for family vehicle.",Car,Vehicle
+112,I want a savings goal of 300000 for maa car by in 18 months.,Car,Vehicle
+113,"By 1 year, I want to have ₹5 lakhs for buy a car.",Car,Vehicle
+114,Maa goal purchase a family car; target 5 lakh rupees; time 12 months.,Car,Vehicle
+115,I am saving 500000 for new car and want to reach it in within 6 months.,Car,Vehicle
+116,We have a future plan for car down payment and need ₹2 lakhs in 6 months.,Car,Vehicle
+117,I need to build 2 lakh rupees savings for family vehicle over 2 years.,Car,Vehicle
+118,Maa future goal maa car kosam 200000 collect cheyyali within 24 months.,Car,Vehicle
+119,Can I save ₹3 lakhs for buy a car within within two years?,Car,Vehicle
+120,Our family wants to arrange 3 lakh rupees for purchase a family car in in 18 months.,Car,Vehicle
+121,I am keeping 300000 aside for new car for the next 1 year.,Car,Vehicle
+122,Nenu car down payment kosam next 12 months lo ₹5 lakhs save cheyyali.,Car,Vehicle
+123,"Maa family future kosam family vehicle ki 5 lakh rupees required, period within 6 months.",Car,Vehicle
+124,I want to create a fund of 500000 for maa car in 6 months.,Car,Vehicle
+125,We should save ₹2 lakhs for buy a car before 2 years.,Car,Vehicle
+126,I want to save ₹3 lakhs for buy a bike in 2 years.,Bike,Vehicle
+127,purchase a scooter kosam 24 months lo 3 lakh rupees save cheyyali.,Bike,Vehicle
+128,Maa family new bike kosam within two years lo 300000 pakkana pettali.,Bike,Vehicle
+129,I need ₹5 lakhs within in 18 months for two wheeler.,Bike,Vehicle
+130,We want to keep aside 5 lakh rupees in 1 year for maa bike.,Bike,Vehicle
+131,"Next 12 months, we need 500000 for family scooter.",Bike,Vehicle
+132,I am planning to save ₹2 lakhs over within 6 months for buy a bike.,Bike,Vehicle
+133,Nenu purchase a scooter kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Bike,Vehicle
+134,"Maa new bike kosam 200000 save cheyyali, target 2 years.",Bike,Vehicle
+135,"Future lo two wheeler kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Bike,Vehicle
+136,"For our family, I want to arrange 3 lakh rupees in within two years for maa bike.",Bike,Vehicle
+137,I want a savings goal of 300000 for family scooter by in 18 months.,Bike,Vehicle
+138,"By 1 year, I want to have ₹5 lakhs for buy a bike.",Bike,Vehicle
+139,Maa goal purchase a scooter; target 5 lakh rupees; time 12 months.,Bike,Vehicle
+140,I am saving 500000 for new bike and want to reach it in within 6 months.,Bike,Vehicle
+141,We have a future plan for two wheeler and need ₹2 lakhs in 6 months.,Bike,Vehicle
+142,I need to build 2 lakh rupees savings for maa bike over 2 years.,Bike,Vehicle
+143,Maa future goal family scooter kosam 200000 collect cheyyali within 24 months.,Bike,Vehicle
+144,Can I save ₹3 lakhs for buy a bike within within two years?,Bike,Vehicle
+145,Our family wants to arrange 3 lakh rupees for purchase a scooter in in 18 months.,Bike,Vehicle
+146,I am keeping 300000 aside for new bike for the next 1 year.,Bike,Vehicle
+147,Nenu two wheeler kosam next 12 months lo ₹5 lakhs save cheyyali.,Bike,Vehicle
+148,"Maa family future kosam maa bike ki 5 lakh rupees required, period within 6 months.",Bike,Vehicle
+149,I want to create a fund of 500000 for family scooter in 6 months.,Bike,Vehicle
+150,We should save ₹2 lakhs for buy a bike before 2 years.,Bike,Vehicle
+151,I want to save ₹3 lakhs for medical expenses in 2 years.,Medical Fund,Medical
+152,future medical treatment kosam 24 months lo 3 lakh rupees save cheyyali.,Medical Fund,Medical
+153,Maa family hospital expenses kosam within two years lo 300000 pakkana pettali.,Medical Fund,Medical
+154,I need ₹5 lakhs within in 18 months for health emergency.,Medical Fund,Medical
+155,We want to keep aside 5 lakh rupees in 1 year for medical fund.,Medical Fund,Medical
+156,"Next 12 months, we need 500000 for maa family medical needs.",Medical Fund,Medical
+157,I am planning to save ₹2 lakhs over within 6 months for medical expenses.,Medical Fund,Medical
+158,Nenu future medical treatment kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Medical Fund,Medical
+159,"Maa hospital expenses kosam 200000 save cheyyali, target 2 years.",Medical Fund,Medical
+160,"Future lo health emergency kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Medical Fund,Medical
+161,"For our family, I want to arrange 3 lakh rupees in within two years for medical fund.",Medical Fund,Medical
+162,I want a savings goal of 300000 for maa family medical needs by in 18 months.,Medical Fund,Medical
+163,"By 1 year, I want to have ₹5 lakhs for medical expenses.",Medical Fund,Medical
+164,Maa goal future medical treatment; target 5 lakh rupees; time 12 months.,Medical Fund,Medical
+165,I am saving 500000 for hospital expenses and want to reach it in within 6 months.,Medical Fund,Medical
+166,We have a future plan for health emergency and need ₹2 lakhs in 6 months.,Medical Fund,Medical
+167,I need to build 2 lakh rupees savings for medical fund over 2 years.,Medical Fund,Medical
+168,Maa future goal maa family medical needs kosam 200000 collect cheyyali within 24 months.,Medical Fund,Medical
+169,Can I save ₹3 lakhs for medical expenses within within two years?,Medical Fund,Medical
+170,Our family wants to arrange 3 lakh rupees for future medical treatment in in 18 months.,Medical Fund,Medical
+171,I am keeping 300000 aside for hospital expenses for the next 1 year.,Medical Fund,Medical
+172,Nenu health emergency kosam next 12 months lo ₹5 lakhs save cheyyali.,Medical Fund,Medical
+173,"Maa family future kosam medical fund ki 5 lakh rupees required, period within 6 months.",Medical Fund,Medical
+174,I want to create a fund of 500000 for maa family medical needs in 6 months.,Medical Fund,Medical
+175,We should save ₹2 lakhs for medical expenses before 2 years.,Medical Fund,Medical
+176,I want to save ₹3 lakhs for family vacation in 2 years.,Family Travel,Travel
+177,family trip kosam 24 months lo 3 lakh rupees save cheyyali.,Family Travel,Travel
+178,Maa family travel with my family kosam within two years lo 300000 pakkana pettali.,Family Travel,Travel
+179,I need ₹5 lakhs within in 18 months for international trip.,Family Travel,Travel
+180,We want to keep aside 5 lakh rupees in 1 year for family holiday.,Family Travel,Travel
+181,"Next 12 months, we need 500000 for maa family trip.",Family Travel,Travel
+182,I am planning to save ₹2 lakhs over within 6 months for family vacation.,Family Travel,Travel
+183,Nenu family trip kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Family Travel,Travel
+184,"Maa travel with my family kosam 200000 save cheyyali, target 2 years.",Family Travel,Travel
+185,"Future lo international trip kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Family Travel,Travel
+186,"For our family, I want to arrange 3 lakh rupees in within two years for family holiday.",Family Travel,Travel
+187,I want a savings goal of 300000 for maa family trip by in 18 months.,Family Travel,Travel
+188,"By 1 year, I want to have ₹5 lakhs for family vacation.",Family Travel,Travel
+189,Maa goal family trip; target 5 lakh rupees; time 12 months.,Family Travel,Travel
+190,I am saving 500000 for travel with my family and want to reach it in within 6 months.,Family Travel,Travel
+191,We have a future plan for international trip and need ₹2 lakhs in 6 months.,Family Travel,Travel
+192,I need to build 2 lakh rupees savings for family holiday over 2 years.,Family Travel,Travel
+193,Maa future goal maa family trip kosam 200000 collect cheyyali within 24 months.,Family Travel,Travel
+194,Can I save ₹3 lakhs for family vacation within within two years?,Family Travel,Travel
+195,Our family wants to arrange 3 lakh rupees for family trip in in 18 months.,Family Travel,Travel
+196,I am keeping 300000 aside for travel with my family for the next 1 year.,Family Travel,Travel
+197,Nenu international trip kosam next 12 months lo ₹5 lakhs save cheyyali.,Family Travel,Travel
+198,"Maa family future kosam family holiday ki 5 lakh rupees required, period within 6 months.",Family Travel,Travel
+199,I want to create a fund of 500000 for maa family trip in 6 months.,Family Travel,Travel
+200,We should save ₹2 lakhs for family vacation before 2 years.,Family Travel,Travel
+201,I want to save ₹3 lakhs for buy a laptop in 2 years.,Laptop,Electronics
+202,new laptop for studies kosam 24 months lo 3 lakh rupees save cheyyali.,Laptop,Electronics
+203,Maa family laptop for college kosam within two years lo 300000 pakkana pettali.,Laptop,Electronics
+204,I need ₹5 lakhs within in 18 months for work laptop.,Laptop,Electronics
+205,We want to keep aside 5 lakh rupees in 1 year for new computer.,Laptop,Electronics
+206,"Next 12 months, we need 500000 for maa laptop.",Laptop,Electronics
+207,I am planning to save ₹2 lakhs over within 6 months for buy a laptop.,Laptop,Electronics
+208,Nenu new laptop for studies kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Laptop,Electronics
+209,"Maa laptop for college kosam 200000 save cheyyali, target 2 years.",Laptop,Electronics
+210,"Future lo work laptop kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Laptop,Electronics
+211,"For our family, I want to arrange 3 lakh rupees in within two years for new computer.",Laptop,Electronics
+212,I want a savings goal of 300000 for maa laptop by in 18 months.,Laptop,Electronics
+213,"By 1 year, I want to have ₹5 lakhs for buy a laptop.",Laptop,Electronics
+214,Maa goal new laptop for studies; target 5 lakh rupees; time 12 months.,Laptop,Electronics
+215,I am saving 500000 for laptop for college and want to reach it in within 6 months.,Laptop,Electronics
+216,We have a future plan for work laptop and need ₹2 lakhs in 6 months.,Laptop,Electronics
+217,I need to build 2 lakh rupees savings for new computer over 2 years.,Laptop,Electronics
+218,Maa future goal maa laptop kosam 200000 collect cheyyali within 24 months.,Laptop,Electronics
+219,Can I save ₹3 lakhs for buy a laptop within within two years?,Laptop,Electronics
+220,Our family wants to arrange 3 lakh rupees for new laptop for studies in in 18 months.,Laptop,Electronics
+221,I am keeping 300000 aside for laptop for college for the next 1 year.,Laptop,Electronics
+222,Nenu work laptop kosam next 12 months lo ₹5 lakhs save cheyyali.,Laptop,Electronics
+223,"Maa family future kosam new computer ki 5 lakh rupees required, period within 6 months.",Laptop,Electronics
+224,I want to create a fund of 500000 for maa laptop in 6 months.,Laptop,Electronics
+225,We should save ₹2 lakhs for buy a laptop before 2 years.,Laptop,Electronics
+226,I want to save ₹3 lakhs for buy a phone in 2 years.,Mobile Phone,Electronics
+227,new mobile phone kosam 24 months lo 3 lakh rupees save cheyyali.,Mobile Phone,Electronics
+228,Maa family smartphone kosam within two years lo 300000 pakkana pettali.,Mobile Phone,Electronics
+229,I need ₹5 lakhs within in 18 months for new phone for work.,Mobile Phone,Electronics
+230,We want to keep aside 5 lakh rupees in 1 year for phone purchase.,Mobile Phone,Electronics
+231,"Next 12 months, we need 500000 for maa new phone.",Mobile Phone,Electronics
+232,I am planning to save ₹2 lakhs over within 6 months for buy a phone.,Mobile Phone,Electronics
+233,Nenu new mobile phone kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Mobile Phone,Electronics
+234,"Maa smartphone kosam 200000 save cheyyali, target 2 years.",Mobile Phone,Electronics
+235,"Future lo new phone for work kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Mobile Phone,Electronics
+236,"For our family, I want to arrange 3 lakh rupees in within two years for phone purchase.",Mobile Phone,Electronics
+237,I want a savings goal of 300000 for maa new phone by in 18 months.,Mobile Phone,Electronics
+238,"By 1 year, I want to have ₹5 lakhs for buy a phone.",Mobile Phone,Electronics
+239,Maa goal new mobile phone; target 5 lakh rupees; time 12 months.,Mobile Phone,Electronics
+240,I am saving 500000 for smartphone and want to reach it in within 6 months.,Mobile Phone,Electronics
+241,We have a future plan for new phone for work and need ₹2 lakhs in 6 months.,Mobile Phone,Electronics
+242,I need to build 2 lakh rupees savings for phone purchase over 2 years.,Mobile Phone,Electronics
+243,Maa future goal maa new phone kosam 200000 collect cheyyali within 24 months.,Mobile Phone,Electronics
+244,Can I save ₹3 lakhs for buy a phone within within two years?,Mobile Phone,Electronics
+245,Our family wants to arrange 3 lakh rupees for new mobile phone in in 18 months.,Mobile Phone,Electronics
+246,I am keeping 300000 aside for smartphone for the next 1 year.,Mobile Phone,Electronics
+247,Nenu new phone for work kosam next 12 months lo ₹5 lakhs save cheyyali.,Mobile Phone,Electronics
+248,"Maa family future kosam phone purchase ki 5 lakh rupees required, period within 6 months.",Mobile Phone,Electronics
+249,I want to create a fund of 500000 for maa new phone in 6 months.,Mobile Phone,Electronics
+250,We should save ₹2 lakhs for buy a phone before 2 years.,Mobile Phone,Electronics
+251,I want to save ₹3 lakhs for marriage expenses in 2 years.,Marriage,Marriage
+252,my daughter's marriage kosam 24 months lo 3 lakh rupees save cheyyali.,Marriage,Marriage
+253,Maa family my son's marriage kosam within two years lo 300000 pakkana pettali.,Marriage,Marriage
+254,I need ₹5 lakhs within in 18 months for future marriage.,Marriage,Marriage
+255,We want to keep aside 5 lakh rupees in 1 year for wedding expenses.,Marriage,Marriage
+256,"Next 12 months, we need 500000 for marriage fund.",Marriage,Marriage
+257,I am planning to save ₹2 lakhs over within 6 months for marriage expenses.,Marriage,Marriage
+258,Nenu my daughter's marriage kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Marriage,Marriage
+259,"Maa my son's marriage kosam 200000 save cheyyali, target 2 years.",Marriage,Marriage
+260,"Future lo future marriage kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Marriage,Marriage
+261,"For our family, I want to arrange 3 lakh rupees in within two years for wedding expenses.",Marriage,Marriage
+262,I want a savings goal of 300000 for marriage fund by in 18 months.,Marriage,Marriage
+263,"By 1 year, I want to have ₹5 lakhs for marriage expenses.",Marriage,Marriage
+264,Maa goal my daughter's marriage; target 5 lakh rupees; time 12 months.,Marriage,Marriage
+265,I am saving 500000 for my son's marriage and want to reach it in within 6 months.,Marriage,Marriage
+266,We have a future plan for future marriage and need ₹2 lakhs in 6 months.,Marriage,Marriage
+267,I need to build 2 lakh rupees savings for wedding expenses over 2 years.,Marriage,Marriage
+268,Maa future goal marriage fund kosam 200000 collect cheyyali within 24 months.,Marriage,Marriage
+269,Can I save ₹3 lakhs for marriage expenses within within two years?,Marriage,Marriage
+270,Our family wants to arrange 3 lakh rupees for my daughter's marriage in in 18 months.,Marriage,Marriage
+271,I am keeping 300000 aside for my son's marriage for the next 1 year.,Marriage,Marriage
+272,Nenu future marriage kosam next 12 months lo ₹5 lakhs save cheyyali.,Marriage,Marriage
+273,"Maa family future kosam wedding expenses ki 5 lakh rupees required, period within 6 months.",Marriage,Marriage
+274,I want to create a fund of 500000 for marriage fund in 6 months.,Marriage,Marriage
+275,We should save ₹2 lakhs for marriage expenses before 2 years.,Marriage,Marriage
+276,I want to save ₹3 lakhs for emergency fund in 2 years.,Emergency Fund,Emergency
+277,family emergency kosam 24 months lo 3 lakh rupees save cheyyali.,Emergency Fund,Emergency
+278,Maa family unexpected expenses kosam within two years lo 300000 pakkana pettali.,Emergency Fund,Emergency
+279,I need ₹5 lakhs within in 18 months for future emergency.,Emergency Fund,Emergency
+280,We want to keep aside 5 lakh rupees in 1 year for emergency savings.,Emergency Fund,Emergency
+281,"Next 12 months, we need 500000 for maa family emergency fund.",Emergency Fund,Emergency
+282,I am planning to save ₹2 lakhs over within 6 months for emergency fund.,Emergency Fund,Emergency
+283,Nenu family emergency kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Emergency Fund,Emergency
+284,"Maa unexpected expenses kosam 200000 save cheyyali, target 2 years.",Emergency Fund,Emergency
+285,"Future lo future emergency kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Emergency Fund,Emergency
+286,"For our family, I want to arrange 3 lakh rupees in within two years for emergency savings.",Emergency Fund,Emergency
+287,I want a savings goal of 300000 for maa family emergency fund by in 18 months.,Emergency Fund,Emergency
+288,"By 1 year, I want to have ₹5 lakhs for emergency fund.",Emergency Fund,Emergency
+289,Maa goal family emergency; target 5 lakh rupees; time 12 months.,Emergency Fund,Emergency
+290,I am saving 500000 for unexpected expenses and want to reach it in within 6 months.,Emergency Fund,Emergency
+291,We have a future plan for future emergency and need ₹2 lakhs in 6 months.,Emergency Fund,Emergency
+292,I need to build 2 lakh rupees savings for emergency savings over 2 years.,Emergency Fund,Emergency
+293,Maa future goal maa family emergency fund kosam 200000 collect cheyyali within 24 months.,Emergency Fund,Emergency
+294,Can I save ₹3 lakhs for emergency fund within within two years?,Emergency Fund,Emergency
+295,Our family wants to arrange 3 lakh rupees for family emergency in in 18 months.,Emergency Fund,Emergency
+296,I am keeping 300000 aside for unexpected expenses for the next 1 year.,Emergency Fund,Emergency
+297,Nenu future emergency kosam next 12 months lo ₹5 lakhs save cheyyali.,Emergency Fund,Emergency
+298,"Maa family future kosam emergency savings ki 5 lakh rupees required, period within 6 months.",Emergency Fund,Emergency
+299,I want to create a fund of 500000 for maa family emergency fund in 6 months.,Emergency Fund,Emergency
+300,We should save ₹2 lakhs for emergency fund before 2 years.,Emergency Fund,Emergency
+301,I want to save ₹3 lakhs for start a business in 2 years.,Business,Business
+302,new business kosam 24 months lo 3 lakh rupees save cheyyali.,Business,Business
+303,Maa family small business kosam within two years lo 300000 pakkana pettali.,Business,Business
+304,I need ₹5 lakhs within in 18 months for business investment.,Business,Business
+305,We want to keep aside 5 lakh rupees in 1 year for shop setup.,Business,Business
+306,"Next 12 months, we need 500000 for maa business plan.",Business,Business
+307,I am planning to save ₹2 lakhs over within 6 months for start a business.,Business,Business
+308,Nenu new business kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Business,Business
+309,"Maa small business kosam 200000 save cheyyali, target 2 years.",Business,Business
+310,"Future lo business investment kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Business,Business
+311,"For our family, I want to arrange 3 lakh rupees in within two years for shop setup.",Business,Business
+312,I want a savings goal of 300000 for maa business plan by in 18 months.,Business,Business
+313,"By 1 year, I want to have ₹5 lakhs for start a business.",Business,Business
+314,Maa goal new business; target 5 lakh rupees; time 12 months.,Business,Business
+315,I am saving 500000 for small business and want to reach it in within 6 months.,Business,Business
+316,We have a future plan for business investment and need ₹2 lakhs in 6 months.,Business,Business
+317,I need to build 2 lakh rupees savings for shop setup over 2 years.,Business,Business
+318,Maa future goal maa business plan kosam 200000 collect cheyyali within 24 months.,Business,Business
+319,Can I save ₹3 lakhs for start a business within within two years?,Business,Business
+320,Our family wants to arrange 3 lakh rupees for new business in in 18 months.,Business,Business
+321,I am keeping 300000 aside for small business for the next 1 year.,Business,Business
+322,Nenu business investment kosam next 12 months lo ₹5 lakhs save cheyyali.,Business,Business
+323,"Maa family future kosam shop setup ki 5 lakh rupees required, period within 6 months.",Business,Business
+324,I want to create a fund of 500000 for maa business plan in 6 months.,Business,Business
+325,We should save ₹2 lakhs for start a business before 2 years.,Business,Business
+326,I want to save ₹3 lakhs for anniversary trip in 2 years.,Wedding Anniversary Trip,Family Event
+327,our wedding anniversary vacation kosam 24 months lo 3 lakh rupees save cheyyali.,Wedding Anniversary Trip,Family Event
+328,Maa family anniversary holiday kosam within two years lo 300000 pakkana pettali.,Wedding Anniversary Trip,Family Event
+329,I need ₹5 lakhs within in 18 months for special family trip.,Wedding Anniversary Trip,Family Event
+330,We want to keep aside 5 lakh rupees in 1 year for marriage anniversary travel.,Wedding Anniversary Trip,Family Event
+331,"Next 12 months, we need 500000 for anniversary celebration trip.",Wedding Anniversary Trip,Family Event
+332,I am planning to save ₹2 lakhs over within 6 months for anniversary trip.,Wedding Anniversary Trip,Family Event
+333,Nenu our wedding anniversary vacation kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Wedding Anniversary Trip,Family Event
+334,"Maa anniversary holiday kosam 200000 save cheyyali, target 2 years.",Wedding Anniversary Trip,Family Event
+335,"Future lo special family trip kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Wedding Anniversary Trip,Family Event
+336,"For our family, I want to arrange 3 lakh rupees in within two years for marriage anniversary travel.",Wedding Anniversary Trip,Family Event
+337,I want a savings goal of 300000 for anniversary celebration trip by in 18 months.,Wedding Anniversary Trip,Family Event
+338,"By 1 year, I want to have ₹5 lakhs for anniversary trip.",Wedding Anniversary Trip,Family Event
+339,Maa goal our wedding anniversary vacation; target 5 lakh rupees; time 12 months.,Wedding Anniversary Trip,Family Event
+340,I am saving 500000 for anniversary holiday and want to reach it in within 6 months.,Wedding Anniversary Trip,Family Event
+341,We have a future plan for special family trip and need ₹2 lakhs in 6 months.,Wedding Anniversary Trip,Family Event
+342,I need to build 2 lakh rupees savings for marriage anniversary travel over 2 years.,Wedding Anniversary Trip,Family Event
+343,Maa future goal anniversary celebration trip kosam 200000 collect cheyyali within 24 months.,Wedding Anniversary Trip,Family Event
+344,Can I save ₹3 lakhs for anniversary trip within within two years?,Wedding Anniversary Trip,Family Event
+345,Our family wants to arrange 3 lakh rupees for our wedding anniversary vacation in in 18 months.,Wedding Anniversary Trip,Family Event
+346,I am keeping 300000 aside for anniversary holiday for the next 1 year.,Wedding Anniversary Trip,Family Event
+347,Nenu special family trip kosam next 12 months lo ₹5 lakhs save cheyyali.,Wedding Anniversary Trip,Family Event
+348,"Maa family future kosam marriage anniversary travel ki 5 lakh rupees required, period within 6 months.",Wedding Anniversary Trip,Family Event
+349,I want to create a fund of 500000 for anniversary celebration trip in 6 months.,Wedding Anniversary Trip,Family Event
+350,We should save ₹2 lakhs for anniversary trip before 2 years.,Wedding Anniversary Trip,Family Event
+351,I want to save ₹3 lakhs for family function in 2 years.,Family Function,Family Event
+352,housewarming function kosam 24 months lo 3 lakh rupees save cheyyali.,Family Function,Family Event
+353,Maa family family celebration kosam within two years lo 300000 pakkana pettali.,Family Function,Family Event
+354,I need ₹5 lakhs within in 18 months for birthday celebration.,Family Function,Family Event
+355,We want to keep aside 5 lakh rupees in 1 year for naming ceremony.,Family Function,Family Event
+356,"Next 12 months, we need 500000 for family event expenses.",Family Function,Family Event
+357,I am planning to save ₹2 lakhs over within 6 months for family function.,Family Function,Family Event
+358,Nenu housewarming function kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Family Function,Family Event
+359,"Maa family celebration kosam 200000 save cheyyali, target 2 years.",Family Function,Family Event
+360,"Future lo birthday celebration kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Family Function,Family Event
+361,"For our family, I want to arrange 3 lakh rupees in within two years for naming ceremony.",Family Function,Family Event
+362,I want a savings goal of 300000 for family event expenses by in 18 months.,Family Function,Family Event
+363,"By 1 year, I want to have ₹5 lakhs for family function.",Family Function,Family Event
+364,Maa goal housewarming function; target 5 lakh rupees; time 12 months.,Family Function,Family Event
+365,I am saving 500000 for family celebration and want to reach it in within 6 months.,Family Function,Family Event
+366,We have a future plan for birthday celebration and need ₹2 lakhs in 6 months.,Family Function,Family Event
+367,I need to build 2 lakh rupees savings for naming ceremony over 2 years.,Family Function,Family Event
+368,Maa future goal family event expenses kosam 200000 collect cheyyali within 24 months.,Family Function,Family Event
+369,Can I save ₹3 lakhs for family function within within two years?,Family Function,Family Event
+370,Our family wants to arrange 3 lakh rupees for housewarming function in in 18 months.,Family Function,Family Event
+371,I am keeping 300000 aside for family celebration for the next 1 year.,Family Function,Family Event
+372,Nenu birthday celebration kosam next 12 months lo ₹5 lakhs save cheyyali.,Family Function,Family Event
+373,"Maa family future kosam naming ceremony ki 5 lakh rupees required, period within 6 months.",Family Function,Family Event
+374,I want to create a fund of 500000 for family event expenses in 6 months.,Family Function,Family Event
+375,We should save ₹2 lakhs for family function before 2 years.,Family Function,Family Event
+376,I want to save ₹3 lakhs for start a music class for my child in 2 years.,Custom Future Goal,Custom
+377,buy furniture for our new home kosam 24 months lo 3 lakh rupees save cheyyali.,Custom Future Goal,Custom
+378,Maa family save for a future photography course kosam within two years lo 300000 pakkana pettali.,Custom Future Goal,Custom
+379,I need ₹5 lakhs within in 18 months for set aside money for a community event.,Custom Future Goal,Custom
+380,We want to keep aside 5 lakh rupees in 1 year for save for a family project.,Custom Future Goal,Custom
+381,"Next 12 months, we need 500000 for plan money for a personal goal.",Custom Future Goal,Custom
+382,I am planning to save ₹2 lakhs over within 6 months for start a music class for my child.,Custom Future Goal,Custom
+383,Nenu buy furniture for our new home kosam 2 lakh rupees 6 months lo save cheyyalanukuntunnanu.,Custom Future Goal,Custom
+384,"Maa save for a future photography course kosam 200000 save cheyyali, target 2 years.",Custom Future Goal,Custom
+385,"Future lo set aside money for a community event kosam ₹3 lakhs kavali, so 24 months lo save chestha.",Custom Future Goal,Custom
+386,"For our family, I want to arrange 3 lakh rupees in within two years for save for a family project.",Custom Future Goal,Custom
+387,I want a savings goal of 300000 for plan money for a personal goal by in 18 months.,Custom Future Goal,Custom
+388,"By 1 year, I want to have ₹5 lakhs for start a music class for my child.",Custom Future Goal,Custom
+389,Maa goal buy furniture for our new home; target 5 lakh rupees; time 12 months.,Custom Future Goal,Custom
+390,I am saving 500000 for save for a future photography course and want to reach it in within 6 months.,Custom Future Goal,Custom
+391,We have a future plan for set aside money for a community event and need ₹2 lakhs in 6 months.,Custom Future Goal,Custom
+392,I need to build 2 lakh rupees savings for save for a family project over 2 years.,Custom Future Goal,Custom
+393,Maa future goal plan money for a personal goal kosam 200000 collect cheyyali within 24 months.,Custom Future Goal,Custom
+394,Can I save ₹3 lakhs for start a music class for my child within within two years?,Custom Future Goal,Custom
+395,Our family wants to arrange 3 lakh rupees for buy furniture for our new home in in 18 months.,Custom Future Goal,Custom
+396,I am keeping 300000 aside for save for a future photography course for the next 1 year.,Custom Future Goal,Custom
+397,Nenu set aside money for a community event kosam next 12 months lo ₹5 lakhs save cheyyali.,Custom Future Goal,Custom
+398,"Maa family future kosam save for a family project ki 5 lakh rupees required, period within 6 months.",Custom Future Goal,Custom
+399,I want to create a fund of 500000 for plan money for a personal goal in 6 months.,Custom Future Goal,Custom
+400,We should save ₹2 lakhs for start a music class for my child before 2 years.,Custom Future Goal,Custom
+401,Save for a photography course for myself,Photography Course,Personal Development
+402,Maa son ki coding course kosam 60000 save cheyyali,Coding Course,Education
+403,We want to save for home furniture,Home Furniture,Housing
+404,I need a fund for a future pet,Pet Fund,Custom
+405,Maa family new business booth setup kosam money save cheyyali,Business Booth,Business
+406,I want to save for a family cultural program,Cultural Program,Family Event
+407,Need money for future farm equipment,Farm Equipment,Custom
+408,Maa family summer camp kosam save cheyyali,Summer Camp,Family Event
+409,Save for a professional certification,Professional Certification,Education
+410,I want to create a fund for a future relocation,Relocation,Custom
+411,Maa family ki new furniture konadaniki money save cheyyali,Furniture,Housing
+412,Need a savings plan for a future startup idea,Startup,Business
+413,Save money for a family photography session,Family Photography,Family Event
+414,I need funds for a future driving course,Driving Course,Personal Development

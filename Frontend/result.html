@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analysis Result - Family Future Fund</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- ==============================
+         NAVBAR
+    =============================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>Family Future Fund</span>
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="goal.html">
+                Goal Understanding
+            </a>
+
+            <a href="savings.html">
+                Savings Details
+            </a>
+
+            <a href="result.html" class="active">
+                Analysis Result
+            </a>
+
+            <a href="tracking.html">
+                Goal Tracking
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==============================
+         MAIN RESULT PAGE
+    =============================== -->
+
+    <main>
+
+        <section class="result-page">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="result-header">
+
+                <div class="hero-badge">
+                    📊 Smart Savings Analysis
+                </div>
+
+                <h1>
+                    Your Savings
+                    <span>Result</span>
+                </h1>
+
+                <p>
+                    Here's a clear picture of how your current
+                    savings plan matches your future goal.
+                </p>
+
+            </div>
+
+
+            <!-- ==============================
+                 GOAL SUMMARY
+            =============================== -->
+
+            <div class="result-goal-card">
+
+                <div>
+
+                    <p class="small-label">
+                        SELECTED GOAL
+                    </p>
+
+                    <h2 id="resultGoal">
+                        Loading...
+                    </h2>
+
+                    <p id="resultCategory">
+                        Category
+                    </p>
+
+                </div>
+
+
+                <div class="result-goal-target">
+
+                    <strong id="resultTarget">
+                        ₹0
+                    </strong>
+
+                    <span id="resultDuration">
+                        0 months
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 MAIN RESULTS
+            ============================== -->
+
+            <div class="result-stat-grid">
+
+
+                <div class="result-stat-card">
+
+                    <div class="stat-icon">
+                        💰
+                    </div>
+
+                    <span>
+                        Expected Savings
+                    </span>
+
+                    <strong id="expectedSavings">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-stat-card">
+
+                    <div class="stat-icon">
+                        📅
+                    </div>
+
+                    <span>
+                        Required Monthly Saving
+                    </span>
+
+                    <strong id="requiredSaving">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-stat-card">
+
+                    <div class="stat-icon">
+                        📌
+                    </div>
+
+                    <span>
+                        Amount Remaining
+                    </span>
+
+                    <strong id="amountRemaining">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-stat-card status-result-card">
+
+                    <div class="stat-icon">
+                        🎯
+                    </div>
+
+                    <span>
+                        Goal Status
+                    </span>
+
+                    <strong id="goalStatus">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 RESULT MESSAGE
+            ============================== -->
+
+            <div
+                class="result-message"
+                id="resultMessage"
+            >
+            </div>
+
+
+            <!-- ==============================
+                 GOAL RESCUE
+            ============================== -->
+
+            <section
+                class="result-rescue"
+                id="rescueSection"
+            >
+
+                <div class="rescue-header">
+
+                    <div>
+
+                        <span class="rescue-label">
+                            SMART ALTERNATIVES
+                        </span>
+
+                        <h2>
+                            🛟 Goal Rescue
+                        </h2>
+
+                        <p>
+                            Your current saving plan may need
+                            an adjustment. Choose the approach
+                            that works best for your family.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="result-rescue-grid">
+
+
+                    <!-- OPTION 1 -->
+
+                    <div class="result-rescue-card">
+
+                        <div class="rescue-card-icon">
+                            💪
+                        </div>
+
+                        <h3>
+                            Save More
+                        </h3>
+
+                        <p>
+                            Increase your monthly saving to
+                            reach the original target within
+                            the selected duration.
+                        </p>
+
+                        <strong id="saveMoreAmount">
+                            ₹0 / month
+                        </strong>
+
+                        <span>
+                            Target within selected duration
+                        </span>
+
+                    </div>
+
+
+                    <!-- OPTION 2 -->
+
+                    <div class="result-rescue-card">
+
+                        <div class="rescue-card-icon">
+                            ⏳
+                        </div>
+
+                        <h3>
+                            Take More Time
+                        </h3>
+
+                        <p>
+                            Continue your current monthly saving
+                            and allow more time to reach the goal.
+                        </p>
+
+                        <strong id="moreTimeAmount">
+                            0 months
+                        </strong>
+
+                        <span>
+                            Estimated completion time
+                        </span>
+
+                    </div>
+
+
+                    <!-- OPTION 3 -->
+
+                    <div class="result-rescue-card">
+
+                        <div class="rescue-card-icon">
+                            🎯
+                        </div>
+
+                        <h3>
+                            Adjust Target
+                        </h3>
+
+                        <p>
+                            Keep your current savings and selected
+                            duration with a lower achievable target.
+                        </p>
+
+                        <strong id="adjustTargetAmount">
+                            ₹0
+                        </strong>
+
+                        <span>
+                            Achievable target
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================
+                 SAVE GOAL
+            ============================== -->
+
+            <div class="result-action">
+
+                <button
+                    class="primary-btn"
+                    onclick="saveGoal()"
+                >
+                    Save This Goal
+                    <span>→</span>
+                </button>
+
+                <p>
+                    Save this plan to track your progress later.
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+            ✦ Family Future Fund
+        </div>
+
+        <p>
+            Smart savings planning for your family's future.
+        </p>
+
+        <p class="copyright">
+            © 2026 Family Future Fund. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+        const goalData =
+            JSON.parse(
+                localStorage.getItem("goalDetails")
+            );
+
+        const analysisData =
+            JSON.parse(
+                localStorage.getItem("analysisDetails")
+            );
+
+
+        if (!goalData || !analysisData) {
+
+            alert(
+                "Analysis information not found."
+            );
+
+            window.location.href =
+                "index.html";
+
+        }
+
+
+        function formatCurrency(amount) {
+
+            return "₹" +
+                Number(amount).toLocaleString("en-IN");
+
+        }
+
+
+        // ==============================
+        // DISPLAY GOAL DETAILS
+        // ==============================
+
+        document.getElementById(
+            "resultGoal"
+        ).textContent =
+            goalData.goalName;
+
+
+        document.getElementById(
+            "resultCategory"
+        ).textContent =
+            goalData.category;
+
+
+        document.getElementById(
+            "resultTarget"
+        ).textContent =
+            formatCurrency(
+                goalData.targetAmount
+            );
+
+
+        document.getElementById(
+            "resultDuration"
+        ).textContent =
+            goalData.durationMonths +
+            " months";
+
+
+        // ==============================
+        // DISPLAY ANALYSIS
+        // ==============================
+
+        document.getElementById(
+            "expectedSavings"
+        ).textContent =
+            formatCurrency(
+                analysisData.expectedSavings
+            );
+
+
+        document.getElementById(
+            "requiredSaving"
+        ).textContent =
+            formatCurrency(
+                Math.ceil(
+                    analysisData.requiredSaving
+                )
+            );
+
+
+        document.getElementById(
+            "amountRemaining"
+        ).textContent =
+            formatCurrency(
+                analysisData.amountRemaining
+            );
+
+
+        document.getElementById(
+            "goalStatus"
+        ).textContent =
+            analysisData.status;
+
+
+        // ==============================
+        // RESULT MESSAGE
+        // ==============================
+
+        const resultMessage =
+            document.getElementById(
+                "resultMessage"
+            );
+
+
+        const target =
+            Number(
+                goalData.targetAmount
+            );
+
+
+        const duration =
+            Number(
+                goalData.durationMonths
+            );
+
+
+        const monthlySaving =
+            Number(
+                analysisData.monthlySaving
+            );
+
+
+        const expectedSavings =
+            Number(
+                analysisData.expectedSavings
+            );
+
+
+        const requiredSaving =
+            Number(
+                analysisData.requiredSaving
+            );
+
+
+        const remaining =
+            Number(
+                analysisData.amountRemaining
+            );
+
+
+        if (expectedSavings >= target) {
+
+            resultMessage.className =
+                "result-message success-message";
+
+            resultMessage.innerHTML = `
+                <div class="message-icon">
+                    🎉
+                </div>
+
+                <div>
+                    <h3>
+                        Your goal is achievable!
+                    </h3>
+
+                    <p>
+                        Based on your current monthly saving of
+                        <strong>
+                            ${formatCurrency(monthlySaving)}
+                        </strong>,
+                        you can reach your target within
+                        <strong>
+                            ${duration} months
+                        </strong>.
+                    </p>
+                </div>
+            `;
+
+        } else {
+
+            resultMessage.className =
+                "result-message warning-message";
+
+            resultMessage.innerHTML = `
+                <div class="message-icon">
+                    🟡
+                </div>
+
+                <div>
+                    <h3>
+                        Your goal needs additional saving
+                    </h3>
+
+                    <p>
+                        You can currently save
+                        <strong>
+                            ${formatCurrency(monthlySaving)}
+                        </strong>
+                        per month.
+
+                        To reach your target of
+                        <strong>
+                            ${formatCurrency(target)}
+                        </strong>
+                        within ${duration} months,
+                        you need approximately
+                        <strong>
+                            ${formatCurrency(
+                                Math.ceil(requiredSaving)
+                            )}
+                        </strong>
+                        per month.
+
+                        Amount remaining:
+                        <strong>
+                            ${formatCurrency(remaining)}
+                        </strong>.
+                    </p>
+                </div>
+            `;
+
+        }
+
+
+        // ==============================
+        // GOAL RESCUE CALCULATIONS
+        // ==============================
+
+        const rescueSection =
+            document.getElementById(
+                "rescueSection"
+            );
+
+
+        if (expectedSavings >= target) {
+
+            rescueSection.style.display =
+                "none";
+
+        } else {
+
+            rescueSection.style.display =
+                "block";
+
+
+            const monthsNeeded =
+                monthlySaving > 0
+                ? Math.ceil(
+                    target / monthlySaving
+                )
+                : 0;
+
+
+            const achievableTarget =
+                monthlySaving * duration;
+
+
+            document.getElementById(
+                "saveMoreAmount"
+            ).textContent =
+                formatCurrency(
+                    Math.ceil(requiredSaving)
+                ) + " / month";
+
+
+            document.getElementById(
+                "moreTimeAmount"
+            ).textContent =
+                monthsNeeded > 0
+                ? monthsNeeded + " months"
+                : "Not available";
+
+
+            document.getElementById(
+                "adjustTargetAmount"
+            ).textContent =
+                formatCurrency(
+                    achievableTarget
+                );
+
+        }
+
+
+        // ==============================
+        // SAVE GOAL
+        // ==============================
+
+        async function saveGoal() {
+
+    const savedGoal = {
+
+        goalName:
+            goalData.goalName,
+
+        category:
+            goalData.category,
+
+        targetAmount:
+            Number(
+                goalData.targetAmount
+            ),
+
+        durationMonths:
+            Number(
+                goalData.durationMonths
+            ),
+
+        monthlySaving:
+            Number(
+                analysisData.monthlySaving
+            ),
+
+        savedAmount:
+            0,
+
+        status:
+            "In Progress"
+    };
+
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:8000/save-goal",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body: JSON.stringify({
+                    goal_name:
+                        savedGoal.goalName,
+
+                    category:
+                        savedGoal.category,
+
+                    target_amount:
+                        savedGoal.targetAmount,
+
+                    duration_months:
+                        savedGoal.durationMonths,
+
+                    monthly_saving:
+                        savedGoal.monthlySaving,
+
+                    saved_amount:
+                        savedGoal.savedAmount,
+
+                    status:
+                        savedGoal.status
+                })
+            }
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Failed to save goal"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        console.log(
+            "Database Response:",
+            data
+        );
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message ||
+                "Goal could not be saved."
+            );
+
+        }
+
+
+        // Store locally for tracking page
+        savedGoal.goalId =
+            data.goal_id;
+
+        localStorage.setItem(
+            "savedGoal",
+            JSON.stringify(
+                savedGoal
+            )
+        );
+
+
+        alert(
+            "Goal saved successfully!"
+        );
+
+
+        window.location.href =
+            "tracking.html";
+
+
+    } catch (error) {
+
+        console.error(
+            "Save Goal Error:",
+            error
+        );
+
+
+        alert(
+            "Could not save the goal. Please check that the backend is running."
+        );
+
+    }
+
+}
+
+    </script>
+
+</body>
+
+</html>

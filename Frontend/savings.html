@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Savings Details - Family Future Fund</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- ==============================
+         NAVBAR
+    =============================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>Family Future Fund</span>
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="goal.html">
+                Goal Understanding
+            </a>
+
+            <a href="savings.html" class="active">
+                Savings Details
+            </a>
+
+            <a href="result.html">
+                Analysis Result
+            </a>
+
+            <a href="tracking.html">
+                Goal Tracking
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==============================
+         MAIN
+    =============================== -->
+
+    <main>
+
+        <section class="analysis-page">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="analysis-header">
+
+                <div class="hero-badge">
+                    💰 Monthly Savings Details
+                </div>
+
+                <h1>
+                    Your Financial
+                    <span>Picture</span>
+                </h1>
+
+                <p>
+                    Enter your current monthly finances so we can
+                    analyze your ability to reach your future goal.
+                </p>
+
+            </div>
+
+
+            <!-- ==============================
+                 SELECTED GOAL
+            =============================== -->
+
+            <div class="analysis-goal-card">
+
+                <p class="small-label">
+                    YOUR SELECTED GOAL
+                </p>
+
+                <div class="selected-goal">
+
+                    <div>
+
+                        <h2 id="selectedGoal">
+                            Loading...
+                        </h2>
+
+                        <p id="selectedCategory">
+                            Category
+                        </p>
+
+                    </div>
+
+
+                    <div class="selected-goal-value">
+
+                        <strong id="selectedAmount">
+                            ₹0
+                        </strong>
+
+                        <span id="selectedDuration">
+                            0 months
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 FINANCIAL INPUTS
+            =============================== -->
+
+            <div class="analysis-card">
+
+                <div class="card-heading">
+
+                    <h2>
+                        Your Monthly Finances
+                    </h2>
+
+                    <p>
+                        Enter your current financial situation.
+                    </p>
+
+                </div>
+
+
+                <div class="finance-grid">
+
+
+                    <!-- MONTHLY INCOME -->
+
+                    <div class="finance-field">
+
+                        <label>
+                            Monthly Income
+                        </label>
+
+                        <input
+                            type="number"
+                            id="monthlyIncome"
+                            placeholder="₹50,000"
+                            min="0"
+                        >
+
+                    </div>
+
+
+                    <!-- MONTHLY EXPENSES -->
+
+                    <div class="finance-field">
+
+                        <label>
+                            Monthly Expenses
+                        </label>
+
+                        <input
+                            type="number"
+                            id="monthlyExpenses"
+                            placeholder="₹40,000"
+                            min="0"
+                        >
+
+                    </div>
+
+
+                    <!-- MONTHLY SAVING -->
+
+                    <div class="finance-field">
+
+                        <label>
+                            I Can Save Per Month
+                        </label>
+
+                        <input
+                            type="number"
+                            id="monthlySaving"
+                            placeholder="₹10,000"
+                            min="0"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANALYZE BUTTON -->
+
+                <button
+                    class="primary-btn"
+                    onclick="analyzeSavings()"
+                >
+                    Analyze My Savings
+                    <span>→</span>
+                </button>
+
+
+                <p class="input-hint">
+                    Your analysis will be shown on the next page.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+            ✦ Family Future Fund
+        </div>
+
+        <p>
+            Smart savings planning for your family's future.
+        </p>
+
+        <p class="copyright">
+            © 2026 Family Future Fund. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    =============================== -->
+
+    <script>
+
+        // =========================================
+        // LOAD GOAL DETAILS
+        // =========================================
+
+        const goalData =
+            JSON.parse(
+                localStorage.getItem("goalDetails")
+            );
+
+
+        if (!goalData) {
+
+            alert("Goal information not found.");
+
+            window.location.href =
+                "index.html";
+
+        }
+
+
+        // =========================================
+        // DISPLAY SELECTED GOAL
+        // =========================================
+
+        document.getElementById(
+            "selectedGoal"
+        ).textContent =
+            goalData.goalName;
+
+
+        document.getElementById(
+            "selectedCategory"
+        ).textContent =
+            goalData.category;
+
+
+        document.getElementById(
+            "selectedAmount"
+        ).textContent =
+            formatCurrency(
+                goalData.targetAmount
+            );
+
+
+        document.getElementById(
+            "selectedDuration"
+        ).textContent =
+            goalData.durationMonths +
+            " months";
+
+
+        // =========================================
+        // CURRENCY FORMAT
+        // =========================================
+
+        function formatCurrency(amount) {
+
+            return "₹" +
+                Number(amount).toLocaleString("en-IN");
+
+        }
+
+
+        // =========================================
+        // ANALYZE SAVINGS
+        // =========================================
+
+        function analyzeSavings() {
+
+            const income =
+                Number(
+                    document.getElementById(
+                        "monthlyIncome"
+                    ).value
+                );
+
+
+            const expenses =
+                Number(
+                    document.getElementById(
+                        "monthlyExpenses"
+                    ).value
+                );
+
+
+            const monthlySaving =
+                Number(
+                    document.getElementById(
+                        "monthlySaving"
+                    ).value
+                );
+
+
+            // Basic validation
+
+            if (income <= 0) {
+
+                alert(
+                    "Please enter your monthly income."
+                );
+
+                return;
+            }
+
+
+            if (expenses < 0) {
+
+                alert(
+                    "Monthly expenses cannot be negative."
+                );
+
+                return;
+            }
+
+
+            if (monthlySaving < 0) {
+
+                alert(
+                    "Monthly saving cannot be negative."
+                );
+
+                return;
+            }
+
+
+            if (expenses > income) {
+
+                alert(
+                    "Monthly expenses cannot be greater than monthly income."
+                );
+
+                return;
+            }
+
+
+            const target =
+                Number(
+                    goalData.targetAmount
+                );
+
+
+            const duration =
+                Number(
+                    goalData.durationMonths
+                );
+
+
+            if (
+                target <= 0 ||
+                duration <= 0
+            ) {
+
+                alert(
+                    "Please enter valid goal details."
+                );
+
+                return;
+            }
+
+
+            // =====================================
+            // SAVINGS CALCULATIONS
+            // =====================================
+
+            const expectedSavings =
+                monthlySaving * duration;
+
+
+            const requiredSaving =
+                target / duration;
+
+
+            const amountRemaining =
+                Math.max(
+                    target - expectedSavings,
+                    0
+                );
+
+
+            // =====================================
+            // STATUS
+            // =====================================
+
+            const status =
+                expectedSavings >= target
+                ? "🎉 Goal Achievable"
+                : "🟡 Needs Additional Saving";
+
+
+            // =====================================
+            // SAVE ANALYSIS DATA
+            // =====================================
+
+            const analysisDetails = {
+
+                monthlyIncome:
+                    income,
+
+                monthlyExpenses:
+                    expenses,
+
+                monthlySaving:
+                    monthlySaving,
+
+                expectedSavings:
+                    expectedSavings,
+
+                requiredSaving:
+                    requiredSaving,
+
+                amountRemaining:
+                    amountRemaining,
+
+                status:
+                    status
+            };
+
+
+            localStorage.setItem(
+                "analysisDetails",
+                JSON.stringify(
+                    analysisDetails
+                )
+            );
+
+
+            // =====================================
+            // GO TO RESULT PAGE
+            // =====================================
+
+            window.location.href =
+                "result.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Goal Understanding - Family Future Fund</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>Family Future Fund</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="goal.html" class="active">Goal Understanding</a>
+            <a href="savings.html">Savings Analysis</a>
+            <a href="tracking.html">Goal Tracking</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero-section">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    🧠 Natural Language Processing
+                </div>
+
+                <h1>
+                    Goal <span>Understanding</span>
+                </h1>
+
+                <p class="hero-description">
+                    We understand your goal from the sentence you entered.
+                </p>
+
+            </div>
+
+
+            <div class="goal-input-card">
+
+                <div class="card-heading">
+                    <h2>Your Goal</h2>
+                    <p>Your original sentence:</p>
+                </div>
+
+                <div class="goal-display-box">
+                    <p id="userGoalText"></p>
+                </div>
+
+            </div>
+
+
+            <div class="goal-input-card">
+
+                <div class="card-heading">
+                    <h2>What We Understood</h2>
+                    <p>You can edit these values before continuing.</p>
+                </div>
+
+                <div class="understood-grid">
+
+                    <div class="understood-item">
+                        <label>Goal</label>
+                        <input type="text" id="goalName">
+                    </div>
+
+                    <div class="understood-item">
+                        <label>Category</label>
+                        <input type="text" id="goalCategory">
+                    </div>
+
+                    <div class="understood-item">
+                        <label>Target Amount</label>
+                        <input type="number" id="targetAmount">
+                    </div>
+
+                    <div class="understood-item">
+                        <label>Duration (Months)</label>
+                        <input type="number" id="durationMonths">
+                    </div>
+
+                </div>
+
+                <button class="primary-btn" onclick="confirmGoal()">
+                    Confirm & Analyze →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+            ✦ Family Future Fund
+        </div>
+
+        <p>Smart savings planning for your family's future.</p>
+
+    </footer>
+<script>
+
+    const userGoalText =
+        localStorage.getItem("userGoalText");
+
+    const goalTextElement =
+        document.getElementById("userGoalText");
+
+
+    // =========================================
+    // SHOW ORIGINAL SENTENCE
+    // =========================================
+
+    if (userGoalText) {
+
+        goalTextElement.textContent =
+            userGoalText;
+
+    } else {
+
+        goalTextElement.textContent =
+            "No goal was entered.";
+
+    }
+
+
+    // =========================================
+    // CALL NLP BACKEND
+    // =========================================
+
+    async function understandGoalWithNLP() {
+
+        try {
+
+            const response = await fetch(
+                "http://localhost:8000/understand-goal",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        text: userGoalText
+                    })
+                }
+            );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Backend connection failed"
+                );
+
+            }
+
+
+            const data =
+                await response.json();
+
+
+            console.log("NLP Response:", data);
+
+
+            if (!data.success) {
+
+                throw new Error(
+                    data.message ||
+                    "NLP could not understand the goal."
+                );
+
+            }
+
+
+            // =====================================
+            // AUTOMATICALLY FILL FIELDS
+            // =====================================
+
+            document.getElementById(
+                "goalName"
+            ).value =
+                data.goal || "";
+
+
+            document.getElementById(
+                "goalCategory"
+            ).value =
+                data.category || "";
+
+
+            document.getElementById(
+                "targetAmount"
+            ).value =
+                data.target_amount || "";
+
+
+            document.getElementById(
+                "durationMonths"
+            ).value =
+                data.duration_months || "";
+
+
+            console.log(
+                "Goal:",
+                data.goal
+            );
+
+            console.log(
+                "Category:",
+                data.category
+            );
+
+            console.log(
+                "Amount:",
+                data.target_amount
+            );
+
+            console.log(
+                "Duration:",
+                data.duration_months
+            );
+
+
+        }
+        catch (error) {
+
+            console.error(
+                "NLP Error:",
+                error
+            );
+
+            alert(
+                "NLP backend connection failed. Please check that the backend is running."
+            );
+
+        }
+
+    }
+
+
+    // =========================================
+    // START NLP
+    // =========================================
+
+    if (userGoalText) {
+
+        understandGoalWithNLP();
+
+    }
+
+
+    // =========================================
+    // CONFIRM & ANALYZE
+    // =========================================
+
+    function confirmGoal() {
+
+        const goalName =
+            document.getElementById(
+                "goalName"
+            ).value.trim();
+
+
+        const category =
+            document.getElementById(
+                "goalCategory"
+            ).value.trim();
+
+
+        const targetAmount =
+            document.getElementById(
+                "targetAmount"
+            ).value;
+
+
+        const durationMonths =
+            document.getElementById(
+                "durationMonths"
+            ).value;
+
+
+        if (
+            goalName === "" ||
+            category === "" ||
+            targetAmount === "" ||
+            durationMonths === ""
+        ) {
+
+            alert(
+                "Please complete all goal details."
+            );
+
+            return;
+        }
+
+
+        if (
+            Number(targetAmount) <= 0 ||
+            Number(durationMonths) <= 0
+        ) {
+
+            alert(
+                "Target amount and duration must be greater than zero."
+            );
+
+            return;
+        }
+
+
+        localStorage.setItem(
+
+            "goalDetails",
+
+            JSON.stringify({
+
+                originalText:
+                    userGoalText,
+
+                goalName:
+                    goalName,
+
+                category:
+                    category,
+
+                targetAmount:
+                    Number(targetAmount),
+
+                durationMonths:
+                    Number(durationMonths)
+
+            })
+
+        );
+
+
+        window.location.href =
+            "savings.html";
+
+    }
+
+</script>
+
+    
+
+
+</body>
+
+</html>

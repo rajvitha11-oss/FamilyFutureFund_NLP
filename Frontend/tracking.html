@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Goal Tracking - Family Future Fund</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>Family Future Fund</span>
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="goal.html">
+                Goal Understanding
+            </a>
+
+            <a href="savings.html">
+                Savings Analysis
+            </a>
+
+            <a href="tracking.html" class="active">
+                Goal Tracking
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <section class="tracking-page">
+
+            <div class="tracking-header">
+
+                <div class="hero-badge">
+                    🎯 Goal Tracking & Rescue
+                </div>
+
+                <h1>
+                    Your Saved <span>Goals</span>
+                </h1>
+
+                <p>
+                    Track your savings progress and adjust your plan
+                    whenever you need.
+                </p>
+
+            </div>
+
+
+            <!-- SAVED GOAL -->
+
+            <div class="tracking-card">
+
+                <div class="tracking-top">
+
+                    <div>
+
+                        <p class="small-label">
+                            SAVED GOAL
+                        </p>
+
+                        <h2 id="trackingGoal">
+                            Loading...
+                        </h2>
+
+                        <p id="trackingCategory">
+                            Category
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="status-badge"
+                        id="trackingStatus"
+                    >
+                        In Progress
+                    </div>
+
+                </div>
+
+
+                <!-- GOAL SUMMARY -->
+
+                <div class="tracking-summary">
+
+                    <div class="summary-item">
+
+                        <span>
+                            Target
+                        </span>
+
+                        <strong id="trackingTarget">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            Saved
+                        </span>
+
+                        <strong id="trackingSaved">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            Remaining
+                        </span>
+
+                        <strong id="trackingRemaining">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            Duration
+                        </span>
+
+                        <strong id="trackingDuration">
+                            0 months
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROGRESS -->
+
+                <div class="progress-section">
+
+                    <div class="progress-label">
+
+                        <span>
+                            Goal Progress
+                        </span>
+
+                        <strong id="progressText">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-fill"
+                            id="progressFill"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UPDATE SAVINGS -->
+
+                <div class="update-section">
+
+                    <h3>
+                        Update Saved Amount
+                    </h3>
+
+                    <p>
+                        Enter the total amount you have saved so far.
+                    </p>
+
+                    <div class="update-row">
+
+                        <input
+                            type="number"
+                            id="newSavedAmount"
+                            placeholder="Enter saved amount"
+                            min="0"
+                        >
+
+                        <button
+                            class="primary-btn"
+                            onclick="updateSavedAmount()"
+                        >
+                            Update Amount
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GOAL REACHED -->
+
+                <div
+                    class="reached-message"
+                    id="reachedMessage"
+                    style="display: none;"
+                >
+
+                    <div class="reached-icon">
+                        🎉
+                    </div>
+
+                    <h2>
+                        Goal Reached!
+                    </h2>
+
+                    <p id="reachedText">
+                        Congratulations!
+                    </p>
+
+                </div>
+
+
+                <!-- GOAL RESCUE -->
+
+                <div
+                    class="tracking-rescue"
+                    id="trackingRescue"
+                >
+
+                    <div class="rescue-heading">
+
+                        <h3>
+                            🛟 Goal Rescue
+                        </h3>
+
+                        <p id="rescueMessage">
+                            Your current saving plan needs adjustment. Choose an option below.
+                        </p>
+
+                    </div>
+
+
+                    <div class="tracking-rescue-grid">
+
+                        <div class="tracking-rescue-card">
+
+                            <div class="rescue-icon">
+                                💪
+                            </div>
+
+                            <h4>
+                                Save More
+                            </h4>
+
+                            <strong id="trackingSaveMore">
+                                ₹0 / month
+                            </strong>
+
+                            <p>
+                                Reach your target within the selected duration.
+                            </p>
+
+                        </div>
+
+
+                        <div class="tracking-rescue-card">
+
+                            <div class="rescue-icon">
+                                ⏳
+                            </div>
+
+                            <h4>
+                                Take More Time
+                            </h4>
+
+                            <strong id="trackingMoreTime">
+                                0 months
+                            </strong>
+
+                            <p>
+                                Continue with your current monthly saving.
+                            </p>
+
+                        </div>
+
+
+                        <div class="tracking-rescue-card">
+
+                            <div class="rescue-icon">
+                                🎯
+                            </div>
+
+                            <h4>
+                                Adjust Target
+                            </h4>
+
+                            <strong id="trackingTargetOption">
+                                ₹0
+                            </strong>
+
+                            <p>
+                                Keep the current savings and duration.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FINAL SUMMARY BUTTON -->
+
+                <div style="text-align: center; margin-top: 30px;">
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        onclick="window.location.href='summary.html'"
+                    >
+                        ✦ View Family Future Summary
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+            ✦ Family Future Fund
+        </div>
+
+        <p>
+            Smart savings planning for your family's future.
+        </p>
+
+        <p class="copyright">
+            © 2026 Family Future Fund. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+    let savedGoal =
+        JSON.parse(
+            localStorage.getItem("savedGoal")
+        );
+
+    let analysisData =
+        JSON.parse(
+            localStorage.getItem("analysisDetails")
+        );
+
+
+    if (!savedGoal) {
+
+        alert("No saved goal found.");
+
+        window.location.href =
+            "index.html";
+    }
+
+
+    function formatCurrency(amount) {
+
+        return "₹" +
+            Number(amount).toLocaleString("en-IN");
+    }
+
+
+    async function loadGoal() {
+
+        try {
+
+            const goalId =
+                savedGoal.goalId;
+
+
+            if (!goalId) {
+
+                alert(
+                    "Goal ID not found."
+                );
+
+                return;
+            }
+
+
+            const response =
+                await fetch(
+                    "http://localhost:8000/goal/" +
+                    goalId
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Failed to fetch goal."
+                );
+            }
+
+
+            const data =
+                await response.json();
+
+
+            if (!data.success) {
+
+                throw new Error(
+                    data.message ||
+                    "Goal not found."
+                );
+            }
+
+
+            // Get latest goal data from MySQL
+            savedGoal = {
+
+                goalId:
+                    data.goal.id,
+
+                goalName:
+                    data.goal.goal_name,
+
+                category:
+                    data.goal.category,
+
+                targetAmount:
+                    data.goal.target_amount,
+
+                durationMonths:
+                    data.goal.duration_months,
+
+                monthlySaving:
+                    data.goal.monthly_saving,
+
+                savedAmount:
+                    data.goal.saved_amount,
+
+                status:
+                    data.goal.status
+            };
+
+
+            // Keep a local copy for the page
+            localStorage.setItem(
+                "savedGoal",
+                JSON.stringify(savedGoal)
+            );
+
+
+            document.getElementById(
+                "trackingGoal"
+            ).textContent =
+                savedGoal.goalName;
+
+
+            document.getElementById(
+                "trackingCategory"
+            ).textContent =
+                savedGoal.category;
+
+
+            document.getElementById(
+                "trackingTarget"
+            ).textContent =
+                formatCurrency(
+                    savedGoal.targetAmount
+                );
+
+
+            document.getElementById(
+                "trackingSaved"
+            ).textContent =
+                formatCurrency(
+                    savedGoal.savedAmount
+                );
+
+
+            document.getElementById(
+                "trackingDuration"
+            ).textContent =
+                savedGoal.durationMonths +
+                " months";
+
+
+            updateProgress();
+
+            updateRescue();
+
+
+        } catch (error) {
+
+            console.error(
+                "Load Goal Error:",
+                error
+            );
+
+
+            alert(
+                "Could not load goal from database."
+            );
+        }
+    }
+
+
+    function updateProgress() {
+
+        const target =
+            Number(
+                savedGoal.targetAmount
+            );
+
+
+        const saved =
+            Number(
+                savedGoal.savedAmount
+            );
+
+
+        const remaining =
+            Math.max(
+                target - saved,
+                0
+            );
+
+
+        const progress =
+            target > 0
+            ? Math.min(
+                (saved / target) * 100,
+                100
+            )
+            : 0;
+
+
+        document.getElementById(
+            "trackingRemaining"
+        ).textContent =
+            formatCurrency(
+                remaining
+            );
+
+
+        document.getElementById(
+            "trackingSaved"
+        ).textContent =
+            formatCurrency(
+                saved
+            );
+
+
+        document.getElementById(
+            "progressText"
+        ).textContent =
+            Math.round(progress) +
+            "%";
+
+
+        document.getElementById(
+            "progressFill"
+        ).style.width =
+            progress + "%";
+
+
+        const status =
+            document.getElementById(
+                "trackingStatus"
+            );
+
+
+        const reached =
+            document.getElementById(
+                "reachedMessage"
+            );
+
+
+        const rescue =
+            document.getElementById(
+                "trackingRescue"
+            );
+
+
+        if (saved >= target) {
+
+            savedGoal.status =
+                "Goal Reached";
+
+
+            status.textContent =
+                "🎉 Goal Reached";
+
+
+            status.className =
+                "status-badge reached-status";
+
+
+            reached.style.display =
+                "block";
+
+
+            const extra =
+                saved - target;
+
+
+            document.getElementById(
+                "reachedText"
+            ).textContent =
+                extra > 0
+                ? "Your saved amount has crossed the target by " +
+                  formatCurrency(extra) +
+                  "."
+                : "You have successfully reached your target!";
+
+
+            rescue.style.display =
+                "none";
+
+
+        } else {
+
+            savedGoal.status =
+                "In Progress";
+
+
+            status.textContent =
+                "🟡 In Progress";
+
+
+            status.className =
+                "status-badge";
+
+
+            reached.style.display =
+                "none";
+
+
+            rescue.style.display =
+                "block";
+        }
+
+
+        localStorage.setItem(
+            "savedGoal",
+            JSON.stringify(savedGoal)
+        );
+    }
+
+
+    function updateRescue() {
+
+        if (!savedGoal) {
+            return;
+        }
+
+
+        const target =
+            Number(savedGoal.targetAmount);
+
+
+        const duration =
+            Number(savedGoal.durationMonths);
+
+
+        const monthly =
+            Number(savedGoal.monthlySaving);
+
+
+        const saved =
+            Number(savedGoal.savedAmount);
+
+
+        const remaining =
+            Math.max(target - saved, 0);
+
+
+        // Required monthly saving from today
+        const requiredMonthly =
+            duration > 0
+                ? Math.ceil(remaining / duration)
+                : 0;
+
+
+        // Months needed with current monthly saving
+        const monthsNeeded =
+            monthly > 0
+                ? Math.ceil(remaining / monthly)
+                : 0;
+
+
+        // Target achievable with current saving
+        const achievableTarget =
+            saved + (monthly * duration);
+
+
+        // SAVE MORE
+
+        document.getElementById(
+            "trackingSaveMore"
+        ).textContent =
+            formatCurrency(requiredMonthly) +
+            " / month";
+
+
+        // TAKE MORE TIME
+
+        document.getElementById(
+            "trackingMoreTime"
+        ).textContent =
+            monthsNeeded > 0
+                ? monthsNeeded + " months"
+                : "Not available";
+
+
+        // ADJUST TARGET
+
+        document.getElementById(
+            "trackingTargetOption"
+        ).textContent =
+            formatCurrency(
+                Math.floor(achievableTarget)
+            );
+
+
+        // SMART STATUS
+
+        const rescueMessage =
+            document.getElementById(
+                "rescueMessage"
+            );
+
+
+        if (rescueMessage) {
+
+            if (remaining <= 0) {
+
+                rescueMessage.textContent =
+                    "🎉 Goal already achieved! No rescue action is required.";
+
+            } else if (monthly >= requiredMonthly) {
+
+                rescueMessage.textContent =
+                    "🟢 You are on track! Your current monthly saving can reach the goal within the selected duration.";
+
+            } else {
+
+                const extraMonthly =
+                    requiredMonthly - monthly;
+
+
+                rescueMessage.textContent =
+                    "🟡 Smart Rescue: You need about " +
+                    formatCurrency(extraMonthly) +
+                    " extra per month to reach the goal on time.";
+            }
+        }
+    }
+
+
+    async function updateSavedAmount() {
+
+        const input =
+            document.getElementById(
+                "newSavedAmount"
+            );
+
+
+        const amount =
+            Number(
+                input.value
+            );
+
+
+        if (
+            isNaN(amount) ||
+            amount < 0
+        ) {
+
+            alert(
+                "Please enter a valid saved amount."
+            );
+
+            return;
+        }
+
+
+        const target =
+            Number(
+                savedGoal.targetAmount
+            );
+
+
+        if (amount > target) {
+
+            const confirmSave =
+                confirm(
+                    "Saved amount is greater than the target. Do you want to continue?"
+                );
+
+
+            if (!confirmSave) {
+
+                return;
+            }
+        }
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "http://localhost:8000/goal/" +
+                    savedGoal.goalId +
+                    "/saved-amount",
+                    {
+                        method: "PUT",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            saved_amount:
+                                amount
+                        })
+                    }
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Failed to update saved amount."
+                );
+            }
+
+
+            const data =
+                await response.json();
+
+
+            if (!data.success) {
+
+                throw new Error(
+                    data.message ||
+                    "Saved amount update failed."
+                );
+            }
+
+
+            input.value = "";
+
+
+            alert(
+                "Saved amount updated successfully!"
+            );
+
+
+            // Reload latest data from MySQL
+            await loadGoal();
+
+
+        } catch (error) {
+
+            console.error(
+                "Update Saved Amount Error:",
+                error
+            );
+
+
+            alert(
+                "Could not update saved amount in database."
+            );
+        }
+    }
+
+
+    loadGoal();
+
+</script>
+
+</body>
+
+</html>
