@@ -314,6 +314,116 @@
 
 
         // =========================================
+        // UPDATE MY GOALS
+        // =========================================
+
+        function updateMyGoals(monthlySaving) {
+
+            // -----------------------------------------
+            // Update current saved goal
+            // -----------------------------------------
+
+            const savedGoal =
+                JSON.parse(
+                    localStorage.getItem("savedGoal") || "null"
+                );
+
+
+            if (savedGoal) {
+
+                savedGoal.monthlySaving =
+                    monthlySaving;
+
+                savedGoal.savedAmount =
+                    monthlySaving;
+
+                localStorage.setItem(
+                    "savedGoal",
+                    JSON.stringify(savedGoal)
+                );
+
+            }
+
+
+            // -----------------------------------------
+            // Update My Goals history
+            // -----------------------------------------
+
+            const myGoals =
+                JSON.parse(
+                    localStorage.getItem("myGoals") || "[]"
+                );
+
+
+            if (myGoals.length === 0) {
+                return;
+            }
+
+
+            myGoals.forEach(function(goal) {
+
+                let isSameGoal = false;
+
+
+                // First preference: goalId
+                if (
+                    savedGoal &&
+                    savedGoal.goalId &&
+                    goal.goalId &&
+                    String(goal.goalId) ===
+                    String(savedGoal.goalId)
+                ) {
+
+                    isSameGoal = true;
+
+                }
+
+
+                // Fallback: match goal details
+                if (!isSameGoal) {
+
+                    isSameGoal =
+                        String(goal.goalName) ===
+                            String(goalData.goalName) &&
+
+                        String(goal.category) ===
+                            String(goalData.category) &&
+
+                        Number(goal.targetAmount) ===
+                            Number(goalData.targetAmount) &&
+
+                        Number(goal.durationMonths) ===
+                            Number(goalData.durationMonths);
+
+                }
+
+
+                // -------------------------------------
+                // Update matching goal
+                // -------------------------------------
+
+                if (isSameGoal) {
+
+                    goal.monthlySaving =
+                        monthlySaving;
+
+                    goal.savedAmount =
+                        monthlySaving;
+
+                }
+
+            });
+
+
+            localStorage.setItem(
+                "myGoals",
+                JSON.stringify(myGoals)
+            );
+
+        }
+
+
+        // =========================================
         // ANALYZE SAVINGS
         // =========================================
 
@@ -473,6 +583,15 @@
                 JSON.stringify(
                     analysisDetails
                 )
+            );
+
+
+            // =====================================
+            // UPDATE SAVED AMOUNT IN MY GOALS
+            // =====================================
+
+            updateMyGoals(
+                monthlySaving
             );
 
 

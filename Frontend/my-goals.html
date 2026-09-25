@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Goals - Family Future Fund</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .my-goals-page{
+            max-width:1100px;
+            margin:0 auto;
+            padding:70px 24px;
+        }
+
+        .my-goals-header{
+            text-align:center;
+            margin-bottom:38px;
+        }
+
+        .my-goals-header h1{
+            font-size:42px;
+            margin:15px 0;
+            color:#ffffff !important;
+        }
+
+        .my-goals-header h1 span{
+            color:#6c63ff;
+        }
+
+        .my-goals-header p{
+            max-width:650px;
+            margin:auto;
+            line-height:1.7;
+            color:#dddddd !important;
+        }
+
+        .goals-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:22px;
+        }
+
+        .goal-history-card{
+            background:#fff;
+            border-radius:18px;
+            padding:24px;
+            box-shadow:0 10px 30px rgba(0,0,0,.08);
+            border:1px solid #eee;
+        }
+
+        .goal-history-top{
+            display:flex;
+            justify-content:space-between;
+            gap:15px;
+            align-items:flex-start;
+        }
+
+        .goal-history-card h2{
+            margin:0 0 7px;
+            color:#111111 !important;
+        }
+
+        .goal-category{
+            margin:0 0 20px;
+            opacity:.7;
+            color:#222222 !important;
+        }
+
+        .goal-detail{
+            display:flex;
+            justify-content:space-between;
+            padding:9px 0;
+            border-bottom:1px solid #eee;
+            color:#222222 !important;
+        }
+
+        .goal-detail strong{
+            color:#111111 !important;
+        }
+
+        .goal-detail:last-of-type{
+            border-bottom:0;
+        }
+
+        .goal-actions{
+            display:flex;
+            gap:10px;
+            margin-top:20px;
+            flex-wrap:wrap;
+        }
+
+        .goal-actions button{
+            border:0;
+            border-radius:10px;
+            padding:10px 14px;
+            cursor:pointer;
+            font-weight:600;
+        }
+
+        .view-btn{
+            background:#6c63ff;
+            color:#fff;
+        }
+
+        .update-btn{
+            background:#198754;
+            color:#fff;
+        }
+
+        .delete-btn{
+            background:#f3f3f3;
+            color:#c0392b;
+        }
+
+        .empty-goals{
+            text-align:center;
+            padding:55px 20px;
+            background:#fff;
+            border-radius:18px;
+            box-shadow:0 10px 30px rgba(0,0,0,.06);
+        }
+
+        .empty-goals h2{
+            color:#111111 !important;
+        }
+
+        .empty-goals p{
+            margin-bottom:20px;
+            color:#222222 !important;
+        }
+
+        .back-btn{
+            display:inline-block;
+            text-decoration:none;
+            background:#6c63ff;
+            color:#fff;
+            padding:11px 18px;
+            border-radius:10px;
+        }
+
+        .goal-status{
+            font-size:12px;
+            padding:6px 10px;
+            border-radius:20px;
+            background:#f0f0ff;
+            white-space:nowrap;
+        }
+
+        /* UPDATE SAVINGS BOX */
+
+        .update-savings-box{
+            margin-top:18px;
+            padding:16px;
+            background:#f7f7ff;
+            border-radius:12px;
+            border:1px solid #e2e2ff;
+        }
+
+        .update-savings-box p{
+            margin:5px 0 10px;
+            color:#222 !important;
+        }
+
+        .update-savings-box strong{
+            color:#111 !important;
+        }
+
+        .update-savings-box input{
+            width:100%;
+            box-sizing:border-box;
+            padding:11px 12px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            margin-bottom:10px;
+            font-size:15px;
+        }
+
+        .update-confirm-btn{
+            background:#198754;
+            color:white;
+            border:0;
+            border-radius:8px;
+            padding:9px 14px;
+            cursor:pointer;
+            font-weight:600;
+        }
+
+        .cancel-update-btn{
+            background:#ddd;
+            color:#222;
+            border:0;
+            border-radius:8px;
+            padding:9px 14px;
+            cursor:pointer;
+            font-weight:600;
+            margin-left:6px;
+        }
+
+        .progress-mini{
+            margin-top:14px;
+        }
+
+        .progress-mini-label{
+            display:flex;
+            justify-content:space-between;
+            font-size:13px;
+            color:#222;
+            margin-bottom:6px;
+        }
+
+        .progress-mini-bar{
+            width:100%;
+            height:8px;
+            background:#e5e5e5;
+            border-radius:10px;
+            overflow:hidden;
+        }
+
+        .progress-mini-fill{
+            height:100%;
+            background:#6c63ff;
+            border-radius:10px;
+        }
+
+        @media(max-width:600px){
+            .my-goals-header h1{
+                font-size:32px;
+            }
+
+            .goal-history-top{
+                flex-direction:column;
+            }
+
+            .goal-actions{
+                flex-direction:column;
+            }
+
+            .goal-actions button{
+                width:100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div
+        class="brand"
+        style="color:#ffffff !important; opacity:1 !important;"
+    >
+        <span class="brand-icon">✦</span>
+        <span>Family Future Fund</span>
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="goal.html">
+            Goal Understanding
+        </a>
+
+        <a href="savings.html">
+            Savings Analysis
+        </a>
+
+        <a href="tracking.html">
+            Goal Tracking
+        </a>
+
+        <a href="my-goals.html" class="active">
+            My Goals
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="my-goals-page">
+
+    <div class="my-goals-header">
+
+        <div class="hero-badge">
+            📁 Saved Financial Goals
+        </div>
+
+        <h1>
+            My <span>Goals</span>
+        </h1>
+
+        <p>
+            View the financial goals you have saved earlier.
+            You can open, update savings, or remove a goal.
+        </p>
+
+    </div>
+
+
+    <div id="goalsContainer"></div>
+
+</section>
+
+</main>
+
+
+<script>
+
+function formatCurrency(amount){
+
+    return "₹" +
+        Number(amount || 0)
+        .toLocaleString("en-IN");
+
+}
+
+
+/* =========================
+   LOAD ALL GOALS
+========================= */
+
+function loadGoals(){
+
+    const goals =
+        JSON.parse(
+            localStorage.getItem("myGoals") || "[]"
+        );
+
+    const box =
+        document.getElementById(
+            "goalsContainer"
+        );
+
+
+    if(!goals.length){
+
+        box.innerHTML = `
+
+            <div class="empty-goals">
+
+                <h2>
+                    No saved goals yet
+                </h2>
+
+                <p>
+                    Create and save a financial goal
+                    to see it here.
+                </p>
+
+                <a
+                    class="back-btn"
+                    href="index.html"
+                >
+                    Create a Goal
+                </a>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    box.innerHTML = `
+
+        <div class="goals-grid">
+
+            ${goals.map((g,i)=>`
+
+                <div
+                    class="goal-history-card"
+                    id="goal-card-${i}"
+                >
+
+                    <div class="goal-history-top">
+
+                        <div>
+
+                            <h2>
+                                🎯
+                                ${escapeHtml(g.goalName)}
+                            </h2>
+
+                            <p class="goal-category">
+                                ${escapeHtml(
+                                    g.category ||
+                                    "Financial Goal"
+                                )}
+                            </p>
+
+                        </div>
+
+
+                        <span class="goal-status">
+
+                            ${escapeHtml(
+                                g.status ||
+                                "In Progress"
+                            )}
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="goal-detail">
+
+                        <span>
+                            Target
+                        </span>
+
+                        <strong>
+                            ${formatCurrency(
+                                g.targetAmount
+                            )}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="goal-detail">
+
+                        <span>
+                            Duration
+                        </span>
+
+                        <strong>
+                            ${g.durationMonths || 0}
+                            months
+                        </strong>
+
+                    </div>
+
+
+                    <div class="goal-detail">
+
+                        <span>
+                            Monthly Saving
+                        </span>
+
+                        <strong>
+                            ${formatCurrency(
+                                g.monthlySaving
+                            )}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="goal-detail">
+
+                        <span>
+                            Saved Amount
+                        </span>
+
+                        <strong
+                            id="saved-amount-${i}"
+                        >
+                            ${formatCurrency(
+                                g.savedAmount
+                            )}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="goal-detail">
+
+                        <span>
+                            Remaining
+                        </span>
+
+                        <strong
+                            id="remaining-${i}"
+                        >
+                            ${formatCurrency(
+                                Math.max(
+                                    Number(
+                                        g.targetAmount || 0
+                                    ) -
+                                    Number(
+                                        g.savedAmount || 0
+                                    ),
+                                    0
+                                )
+                            )}
+                        </strong>
+
+                    </div>
+
+
+                    <div
+                        class="progress-mini"
+                        id="progress-section-${i}"
+                    >
+
+                        <div
+                            class="progress-mini-label"
+                        >
+
+                            <span>
+                                Progress
+                            </span>
+
+                            <strong
+                                id="progress-text-${i}"
+                            >
+                                ${calculateProgress(
+                                    g.targetAmount,
+                                    g.savedAmount
+                                )}%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-mini-bar">
+
+                            <div
+                                class="progress-mini-fill"
+                                id="progress-fill-${i}"
+                                style="
+                                    width:${calculateProgress(
+                                        g.targetAmount,
+                                        g.savedAmount
+                                    )}%;
+                                "
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="goal-actions"
+                        id="goal-actions-${i}"
+                    >
+
+                        <button
+                            class="view-btn"
+                            onclick="viewGoal(${i})"
+                        >
+                            👁️ View Details
+                        </button>
+
+
+                        <button
+                            class="update-btn"
+                            onclick="showUpdateSavings(${i})"
+                        >
+                            💰 Update Savings
+                        </button>
+
+
+                        <button
+                            class="delete-btn"
+                            onclick="deleteGoal(${i})"
+                        >
+                            🗑️ Delete
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="update-box-${i}"
+                        style="display:none;"
+                    ></div>
+
+                </div>
+
+            `).join("")}
+
+        </div>
+
+    `;
+}
+
+
+/* =========================
+   CALCULATE PROGRESS
+========================= */
+
+function calculateProgress(
+    target,
+    saved
+){
+
+    target = Number(target || 0);
+    saved = Number(saved || 0);
+
+    if(target <= 0){
+        return 0;
+    }
+
+    return Math.min(
+        Math.round(
+            (saved / target) * 100
+        ),
+        100
+    );
+}
+
+
+/* =========================
+   VIEW DETAILS
+========================= */
+
+function viewGoal(i){
+
+    const goals =
+        JSON.parse(
+            localStorage.getItem("myGoals") || "[]"
+        );
+
+    const g = goals[i];
+
+    if(!g){
+        return;
+    }
+
+
+    alert(
+
+        "🎯 Goal: " +
+        g.goalName +
+
+        "\n\nCategory: " +
+        (g.category ||
+        "Financial Goal") +
+
+        "\nTarget: " +
+        formatCurrency(
+            g.targetAmount
+        ) +
+
+        "\nDuration: " +
+        (g.durationMonths || 0) +
+        " months" +
+
+        "\nMonthly Saving: " +
+        formatCurrency(
+            g.monthlySaving
+        ) +
+
+        "\nSaved Amount: " +
+        formatCurrency(
+            g.savedAmount
+        ) +
+
+        "\nRemaining: " +
+        formatCurrency(
+            Math.max(
+                Number(
+                    g.targetAmount || 0
+                ) -
+                Number(
+                    g.savedAmount || 0
+                ),
+                0
+            )
+        ) +
+
+        "\nProgress: " +
+        calculateProgress(
+            g.targetAmount,
+            g.savedAmount
+        ) +
+        "%" +
+
+        "\nStatus: " +
+        (g.status ||
+        "In Progress")
+
+    );
+}
+
+
+/* =========================
+   SHOW UPDATE SAVINGS
+========================= */
+
+function showUpdateSavings(i){
+
+    const goals =
+        JSON.parse(
+            localStorage.getItem("myGoals") || "[]"
+        );
+
+    const g = goals[i];
+
+    if(!g){
+        return;
+    }
+
+
+    const box =
+        document.getElementById(
+            "update-box-" + i
+        );
+
+
+    box.style.display = "block";
+
+
+    box.innerHTML = `
+
+        <div class="update-savings-box">
+
+            <p>
+                Current Saved Amount:
+                <strong>
+                    ${formatCurrency(
+                        g.savedAmount
+                    )}
+                </strong>
+            </p>
+
+
+            <input
+                type="number"
+                id="add-saving-${i}"
+                placeholder="Enter amount to add"
+                min="0"
+            >
+
+
+            <button
+                class="update-confirm-btn"
+                onclick="saveAddedAmount(${i})"
+            >
+                Update
+            </button>
+
+
+            <button
+                class="cancel-update-btn"
+                onclick="cancelUpdate(${i})"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================
+   ADD SAVING AMOUNT
+========================= */
+
+function saveAddedAmount(i){
+
+    const goals =
+        JSON.parse(
+            localStorage.getItem("myGoals") || "[]"
+        );
+
+    const g = goals[i];
+
+    if(!g){
+        return;
+    }
+
+
+    const input =
+        document.getElementById(
+            "add-saving-" + i
+        );
+
+
+    const addAmount =
+        Number(input.value);
+
+
+    if(
+        isNaN(addAmount) ||
+        addAmount <= 0
+    ){
+
+        alert(
+            "Please enter a valid amount to add."
+        );
+
+        return;
+    }
+
+
+    const currentSaved =
+        Number(
+            g.savedAmount || 0
+        );
+
+
+    const target =
+        Number(
+            g.targetAmount || 0
+        );
+
+
+    const newSaved =
+        currentSaved + addAmount;
+
+
+    if(newSaved > target){
+
+        const continueUpdate =
+            confirm(
+                "The new saved amount is greater than the target. Do you want to continue?"
+            );
+
+        if(!continueUpdate){
+            return;
+        }
+
+    }
+
+
+    /* Update local My Goals history */
+
+    g.savedAmount =
+        newSaved;
+
+
+    /* Update status */
+
+    if(newSaved >= target){
+
+        g.status =
+            "Goal Achieved";
+
+    }else{
+
+        g.status =
+            "In Progress";
+
+    }
+
+
+    goals[i] = g;
+
+
+    localStorage.setItem(
+        "myGoals",
+        JSON.stringify(goals)
+    );
+
+
+    /* Also update current savedGoal */
+
+    const savedGoal =
+        JSON.parse(
+            localStorage.getItem(
+                "savedGoal"
+            ) || "null"
+        );
+
+
+    if(
+        savedGoal &&
+        String(
+            savedGoal.goalId
+        ) ===
+        String(
+            g.goalId
+        )
+    ){
+
+        savedGoal.savedAmount =
+            newSaved;
+
+        savedGoal.status =
+            g.status;
+
+        localStorage.setItem(
+            "savedGoal",
+            JSON.stringify(
+                savedGoal
+            )
+        );
+
+    }
+
+
+    /*
+       Refresh the same page.
+       No new financial goal required.
+    */
+
+    loadGoals();
+
+}
+
+
+/* =========================
+   CANCEL UPDATE
+========================= */
+
+function cancelUpdate(i){
+
+    const box =
+        document.getElementById(
+            "update-box-" + i
+        );
+
+    if(box){
+
+        box.style.display =
+            "none";
+
+        box.innerHTML =
+            "";
+
+    }
+
+}
+
+
+/* =========================
+   DELETE GOAL
+========================= */
+
+function deleteGoal(i){
+
+    const goals =
+        JSON.parse(
+            localStorage.getItem("myGoals") || "[]"
+        );
+
+
+    if(!goals[i]){
+        return;
+    }
+
+
+    if(
+        confirm(
+            "Delete this saved goal?"
+        )
+    ){
+
+        goals.splice(i,1);
+
+
+        localStorage.setItem(
+            "myGoals",
+            JSON.stringify(goals)
+        );
+
+
+        loadGoals();
+
+    }
+
+}
+
+
+/* =========================
+   SECURITY
+========================= */
+
+function escapeHtml(value){
+
+    return String(
+        value ?? ""
+    ).replace(
+        /[&<>'"]/g,
+        c => ({
+            "&":"&amp;",
+            "<":"&lt;",
+            ">":"&gt;",
+            "'":"&#39;",
+            "\"":"&quot;"
+        }[c])
+    );
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+loadGoals();
+
+</script>
+
+</body>
+</html>

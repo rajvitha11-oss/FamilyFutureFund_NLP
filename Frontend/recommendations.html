@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personalized Recommendations - Family Future Fund</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ==============================
+           RECOMMENDATION PAGE
+        =============================== */
+
+        .recommendation-page {
+            min-height: 100vh;
+            padding: 70px 30px 90px;
+        }
+
+
+        .recommendation-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+
+        .recommendation-header h1 {
+            font-size: 58px;
+            margin: 25px 0 15px;
+        }
+
+
+        .recommendation-header h1 span {
+            background: linear-gradient(
+                90deg,
+                #8b5cf6,
+                #38bdf8
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .recommendation-header p {
+            color: #aeb9d5;
+            font-size: 18px;
+        }
+
+
+        /* ==============================
+           GOAL SUMMARY
+        =============================== */
+
+        .recommendation-goal-card {
+            max-width: 1100px;
+            margin: 0 auto 30px;
+
+            padding: 30px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(45, 38, 88, 0.85),
+                    rgba(20, 38, 58, 0.9)
+                );
+
+            border: 1px solid rgba(
+                255,
+                255,
+                255,
+                0.12
+            );
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+        }
+
+
+        .recommendation-goal-card h2 {
+            margin: 8px 0;
+            font-size: 30px;
+        }
+
+
+        .recommendation-goal-card p {
+            margin: 5px 0;
+            color: #aeb9d5;
+        }
+
+
+        .recommendation-target {
+            text-align: right;
+        }
+
+
+        .recommendation-target strong {
+            display: block;
+            font-size: 32px;
+            color: #ffffff;
+        }
+
+
+        .recommendation-target span {
+            color: #aeb9d5;
+        }
+
+
+        /* ==============================
+           CALCULATION CARDS
+        =============================== */
+
+        .recommendation-stats {
+            max-width: 1100px;
+            margin: 0 auto 35px;
+
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .recommendation-stat {
+            padding: 28px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(24, 29, 52, 0.85);
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.10);
+        }
+
+
+        .recommendation-stat .icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+
+        .recommendation-stat span {
+            display: block;
+            color: #aeb9d5;
+            margin-bottom: 10px;
+        }
+
+
+        .recommendation-stat strong {
+            font-size: 27px;
+            color: #ffffff;
+        }
+
+
+        /* ==============================
+           MAIN RECOMMENDATION
+        =============================== */
+
+        .recommendation-box {
+            max-width: 1100px;
+            margin: 0 auto 35px;
+
+            padding: 35px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(91, 67, 160, 0.35),
+                    rgba(28, 89, 130, 0.30)
+                );
+
+            border: 1px solid
+                rgba(139, 92, 246, 0.45);
+        }
+
+
+        .recommendation-box .box-label {
+            color: #b69cff;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+
+        .recommendation-box h2 {
+            margin: 12px 0 18px;
+            font-size: 30px;
+        }
+
+
+        .recommended-amount {
+            font-size: 48px;
+            font-weight: 800;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #a78bfa,
+                    #38bdf8
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            margin: 15px 0;
+        }
+
+
+        .recommendation-box p {
+            color: #b8c3dc;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+
+        /* ==============================
+           TWO OPTIONS
+        =============================== */
+
+        .recommendation-options {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+
+            display: grid;
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .recommendation-option {
+            padding: 28px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(20, 25, 45, 0.85);
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.10);
+        }
+
+
+        .recommendation-option h3 {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+
+        .recommendation-option p {
+            color: #aeb9d5;
+            line-height: 1.6;
+        }
+
+
+        /* ==============================
+           BUTTONS
+        =============================== */
+
+        .recommendation-actions {
+            max-width: 700px;
+            margin: 0 auto;
+
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+
+        .recommendation-actions .secondary-btn {
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            border-radius: 12px;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.15);
+
+            background:
+                rgba(255, 255, 255, 0.05);
+        }
+
+
+        .recommendation-actions .secondary-btn:hover {
+            background:
+                rgba(255, 255, 255, 0.10);
+        }
+
+
+        /* ==============================
+           MOBILE
+        =============================== */
+
+        @media (max-width: 800px) {
+
+            .recommendation-header h1 {
+                font-size: 40px;
+            }
+
+
+            .recommendation-goal-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+
+            .recommendation-target {
+                text-align: left;
+            }
+
+
+            .recommendation-stats,
+            .recommendation-options {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         NAVBAR
+    =============================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <span class="brand-icon">
+                ✦
+            </span>
+
+            <span>
+                Family Future Fund
+            </span>
+
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="goal.html">
+                Goal Understanding
+            </a>
+
+            <a href="savings.html">
+                Savings Details
+            </a>
+
+            <a href="result.html">
+                Analysis Result
+            </a>
+
+            <a href="tracking.html">
+                Goal Tracking
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==============================
+         MAIN
+    =============================== -->
+
+    <main>
+
+        <section class="recommendation-page">
+
+
+            <!-- HEADER -->
+
+            <div class="recommendation-header">
+
+                <div class="hero-badge">
+                    💡 Personalized Recommendations
+                </div>
+
+                <h1>
+                    A Target That Fits
+                    <span>Your Plan</span>
+                </h1>
+
+                <p>
+                    Based on your current saving capacity
+                    and selected duration.
+                </p>
+
+            </div>
+
+
+            <!-- ==============================
+                 GOAL SUMMARY
+            =============================== -->
+
+            <div class="recommendation-goal-card">
+
+                <div>
+
+                    <p>
+                        SELECTED GOAL
+                    </p>
+
+                    <h2 id="goalName">
+                        Loading...
+                    </h2>
+
+                    <p id="goalCategory">
+                        Category
+                    </p>
+
+                </div>
+
+
+                <div class="recommendation-target">
+
+                    <strong id="originalTarget">
+                        ₹0
+                    </strong>
+
+                    <span id="duration">
+                        0 months
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 FINANCIAL SNAPSHOT
+            =============================== -->
+
+            <div class="recommendation-stats">
+
+
+                <div class="recommendation-stat">
+
+                    <div class="icon">
+                        💰
+                    </div>
+
+                    <span>
+                        Monthly Saving Capacity
+                    </span>
+
+                    <strong id="monthlySaving">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="recommendation-stat">
+
+                    <div class="icon">
+                        📅
+                    </div>
+
+                    <span>
+                        Selected Duration
+                    </span>
+
+                    <strong id="durationCard">
+                        0 months
+                    </strong>
+
+                </div>
+
+
+                <div class="recommendation-stat">
+
+                    <div class="icon">
+                        🎯
+                    </div>
+
+                    <span>
+                        Potential Savings
+                    </span>
+
+                    <strong id="potentialSavings">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 MAIN RECOMMENDATION
+            =============================== -->
+
+            <div class="recommendation-box">
+
+                <span class="box-label">
+                    PERSONALIZED TARGET
+                </span>
+
+                <h2>
+                    Recommended Target
+                </h2>
+
+                <div
+                    class="recommended-amount"
+                    id="recommendedAmount"
+                >
+                    ₹0
+                </div>
+
+                <p id="recommendationText">
+                    Your recommendation will appear here.
+                </p>
+
+            </div>
+
+
+            <!-- ==============================
+                 OPTIONS
+            ============================== -->
+
+            <div class="recommendation-options">
+
+
+                <div class="recommendation-option">
+
+                    <div class="icon">
+                        📌
+                    </div>
+
+                    <h3>
+                        If you keep your current saving
+                    </h3>
+
+                    <p id="currentPlanText">
+                        Your current saving plan can support
+                        a realistic target based on the selected
+                        duration.
+                    </p>
+
+                </div>
+
+
+                <div class="recommendation-option">
+
+                    <div class="icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        If your original target is higher
+                    </h3>
+
+                    <p id="originalPlanText">
+                        You may need additional monthly savings
+                        or more time to reach the original target.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 ACTIONS
+            ============================== -->
+
+            <div class="recommendation-actions">
+
+                <a
+                    href="result.html"
+                    class="secondary-btn"
+                >
+                    ← Back to Analysis Result
+                </a>
+
+                <a
+                    href="tracking.html"
+                    class="secondary-btn"
+                >
+                    📊 Go to Goal Tracking
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+
+        // ==============================
+        // LOAD STORED DATA
+        // ==============================
+
+        const goalData =
+            JSON.parse(
+                localStorage.getItem("goalDetails")
+            );
+
+
+        const analysisData =
+            JSON.parse(
+                localStorage.getItem("analysisDetails")
+            );
+
+
+        // ==============================
+        // CHECK DATA
+        // ==============================
+
+        if (!goalData || !analysisData) {
+
+            alert(
+                "Recommendation information not found."
+            );
+
+            window.location.href =
+                "index.html";
+
+        }
+
+
+        // ==============================
+        // FORMAT CURRENCY
+        // ==============================
+
+        function formatCurrency(amount) {
+
+            return "₹" +
+                Number(amount).toLocaleString(
+                    "en-IN"
+                );
+
+        }
+
+
+        // ==============================
+        // GET VALUES
+        // ==============================
+
+        const goalName =
+            goalData.goalName || "Family Goal";
+
+
+        const category =
+            goalData.category || "Other";
+
+
+        const target =
+            Number(
+                goalData.targetAmount
+            ) || 0;
+
+
+        const duration =
+            Number(
+                goalData.durationMonths
+            ) || 0;
+
+
+        const monthlySaving =
+            Number(
+                analysisData.monthlySaving
+            ) || 0;
+
+
+        // ==============================
+        // PERSONALIZED CALCULATION
+        // ==============================
+
+        const potentialSavings =
+            monthlySaving * duration;
+
+
+        let recommendedTarget =
+            potentialSavings;
+
+
+        // ==============================
+        // DISPLAY GOAL DETAILS
+        // ==============================
+
+        document.getElementById(
+            "goalName"
+        ).textContent =
+            goalName;
+
+
+        document.getElementById(
+            "goalCategory"
+        ).textContent =
+            category;
+
+
+        document.getElementById(
+            "originalTarget"
+        ).textContent =
+            formatCurrency(target);
+
+
+        document.getElementById(
+            "duration"
+        ).textContent =
+            duration + " months";
+
+
+        document.getElementById(
+            "monthlySaving"
+        ).textContent =
+            formatCurrency(monthlySaving);
+
+
+        document.getElementById(
+            "durationCard"
+        ).textContent =
+            duration + " months";
+
+
+        document.getElementById(
+            "potentialSavings"
+        ).textContent =
+            formatCurrency(
+                potentialSavings
+            );
+
+
+        document.getElementById(
+            "recommendedAmount"
+        ).textContent =
+            formatCurrency(
+                recommendedTarget
+            );
+
+
+        // ==============================
+        // RECOMMENDATION TEXT
+        // ==============================
+
+        const recommendationText =
+            document.getElementById(
+                "recommendationText"
+            );
+
+
+        const currentPlanText =
+            document.getElementById(
+                "currentPlanText"
+            );
+
+
+        const originalPlanText =
+            document.getElementById(
+                "originalPlanText"
+            );
+
+
+        // ==============================
+        // CASE 1:
+        // TARGET IS ACHIEVABLE
+        // ==============================
+
+        if (
+            target > 0 &&
+            potentialSavings >= target
+        ) {
+
+            recommendedTarget =
+                target;
+
+
+            document.getElementById(
+                "recommendedAmount"
+            ).textContent =
+                formatCurrency(
+                    recommendedTarget
+                );
+
+
+            recommendationText.innerHTML = `
+
+                Your current saving capacity of
+
+                <strong>
+                    ${formatCurrency(monthlySaving)}
+                </strong>
+
+                per month can support your original
+                target of
+
+                <strong>
+                    ${formatCurrency(target)}
+                </strong>
+
+                within ${duration} months.
+
+            `;
+
+
+            currentPlanText.innerHTML = `
+
+                You can potentially save up to
+
+                <strong>
+                    ${formatCurrency(potentialSavings)}
+                </strong>
+
+                during the selected duration.
+
+            `;
+
+
+            originalPlanText.innerHTML = `
+
+                Your original target is within the
+                calculated saving capacity for this
+                time period.
+
+            `;
+
+        }
+
+
+        // ==============================
+        // CASE 2:
+        // TARGET IS HIGHER THAN CAPACITY
+        // ==============================
+
+        else if (
+            target > 0 &&
+            potentialSavings < target
+        ) {
+
+            recommendationText.innerHTML = `
+
+                Based on your current saving capacity
+                and selected duration, you can consider
+                a target around
+
+                <strong>
+                    ${formatCurrency(potentialSavings)}
+                </strong>.
+
+                Your original target is
+
+                <strong>
+                    ${formatCurrency(target)}
+                </strong>.
+
+            `;
+
+
+            currentPlanText.innerHTML = `
+
+                With
+
+                <strong>
+                    ${formatCurrency(monthlySaving)}
+                </strong>
+
+                saved every month for ${duration} months,
+                your estimated saving capacity is
+
+                <strong>
+                    ${formatCurrency(potentialSavings)}
+                </strong>.
+
+            `;
+
+
+            const additionalMonthly =
+                Math.ceil(
+                    target / duration
+                );
+
+
+            originalPlanText.innerHTML = `
+
+                To reach your original target,
+                approximately
+
+                <strong>
+                    ${formatCurrency(additionalMonthly)}
+                </strong>
+
+                per month would be required.
+
+                Alternatively, you can extend the
+                duration.
+
+            `;
+
+        }
+
+
+        // ==============================
+        // CASE 3:
+        // NO TARGET AMOUNT
+        // ==============================
+
+        else {
+
+            recommendationText.innerHTML = `
+
+                Based on your current saving capacity
+                of
+
+                <strong>
+                    ${formatCurrency(monthlySaving)}
+                </strong>
+
+                per month and the selected duration
+                of ${duration} months, you can consider
+                a target around
+
+                <strong>
+                    ${formatCurrency(potentialSavings)}
+                </strong>.
+
+            `;
+
+
+            currentPlanText.innerHTML = `
+
+                Your recommended target is calculated
+                using your current monthly saving capacity
+                and selected duration.
+
+            `;
+
+
+            originalPlanText.innerHTML = `
+
+                You can adjust the target later if your
+                monthly saving capacity changes.
+
+            `;
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

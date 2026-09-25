@@ -332,25 +332,41 @@
 
 
             <!-- ==============================
-                 SAVE GOAL
-            ============================== -->
+     SAVE GOAL + PERSONALIZED RECOMMENDATIONS
+============================== -->
 
-            <div class="result-action">
+    <div class="result-action">
 
-                <button
-                    class="primary-btn"
-                    onclick="saveGoal()"
-                >
-                    Save This Goal
-                    <span>→</span>
-                </button>
+    <!-- SAVE THIS GOAL -->
+    <button
+        class="primary-btn"
+        onclick="saveGoal()"
+    >
+        Save This Goal
+        <span>→</span>
+    </button>
 
-                <p>
-                    Save this plan to track your progress later.
-                </p>
+    <p>
+        Save this plan to track your progress later.
+    </p>
 
-            </div>
 
+    <!-- PERSONALIZED RECOMMENDATIONS -->
+    <button
+        class="primary-btn"
+        type="button"
+        onclick="window.location.href='recommendations.html'"
+        style="margin-top: 18px;"
+    >
+        💡 Personalized Recommendations
+        <span>→</span>
+    </button>
+
+    <p>
+        Get a realistic target based on your saving capacity.
+    </p>
+
+</div>
 
         </section>
 
@@ -388,6 +404,7 @@
             JSON.parse(
                 localStorage.getItem("goalDetails")
             );
+
 
         const analysisData =
             JSON.parse(
@@ -533,70 +550,97 @@
             resultMessage.className =
                 "result-message success-message";
 
+
             resultMessage.innerHTML = `
+
                 <div class="message-icon">
                     🎉
                 </div>
 
                 <div>
+
                     <h3>
                         Your goal is achievable!
                     </h3>
 
                     <p>
+
                         Based on your current monthly saving of
+
                         <strong>
                             ${formatCurrency(monthlySaving)}
                         </strong>,
+
                         you can reach your target within
+
                         <strong>
                             ${duration} months
                         </strong>.
+
                     </p>
+
                 </div>
+
             `;
 
-        } else {
+        }
+
+        else {
 
             resultMessage.className =
                 "result-message warning-message";
 
+
             resultMessage.innerHTML = `
+
                 <div class="message-icon">
                     🟡
                 </div>
 
                 <div>
+
                     <h3>
                         Your goal needs additional saving
                     </h3>
 
                     <p>
+
                         You can currently save
+
                         <strong>
                             ${formatCurrency(monthlySaving)}
                         </strong>
+
                         per month.
 
                         To reach your target of
+
                         <strong>
                             ${formatCurrency(target)}
                         </strong>
+
                         within ${duration} months,
+
                         you need approximately
+
                         <strong>
                             ${formatCurrency(
                                 Math.ceil(requiredSaving)
                             )}
                         </strong>
+
                         per month.
 
                         Amount remaining:
+
                         <strong>
                             ${formatCurrency(remaining)}
                         </strong>.
+
                     </p>
+
                 </div>
+
             `;
 
         }
@@ -617,7 +661,9 @@
             rescueSection.style.display =
                 "none";
 
-        } else {
+        }
+
+        else {
 
             rescueSection.style.display =
                 "block";
@@ -625,9 +671,11 @@
 
             const monthsNeeded =
                 monthlySaving > 0
+
                 ? Math.ceil(
                     target / monthlySaving
                 )
+
                 : 0;
 
 
@@ -638,22 +686,29 @@
             document.getElementById(
                 "saveMoreAmount"
             ).textContent =
+
                 formatCurrency(
                     Math.ceil(requiredSaving)
-                ) + " / month";
+                )
+
+                + " / month";
 
 
             document.getElementById(
                 "moreTimeAmount"
             ).textContent =
+
                 monthsNeeded > 0
+
                 ? monthsNeeded + " months"
+
                 : "Not available";
 
 
             document.getElementById(
                 "adjustTargetAmount"
             ).textContent =
+
                 formatCurrency(
                     achievableTarget
                 );
@@ -667,140 +722,203 @@
 
         async function saveGoal() {
 
-    const savedGoal = {
+            const savedGoal = {
 
-        goalName:
-            goalData.goalName,
+                goalName:
+                    goalData.goalName,
 
-        category:
-            goalData.category,
+                category:
+                    goalData.category,
 
-        targetAmount:
-            Number(
-                goalData.targetAmount
-            ),
+                targetAmount:
+                    Number(
+                        goalData.targetAmount
+                    ),
 
-        durationMonths:
-            Number(
-                goalData.durationMonths
-            ),
+                durationMonths:
+                    Number(
+                        goalData.durationMonths
+                    ),
 
-        monthlySaving:
-            Number(
-                analysisData.monthlySaving
-            ),
+                monthlySaving:
+                    Number(
+                        analysisData.monthlySaving
+                    ),
 
-        savedAmount:
-            0,
+                savedAmount:
+                    0,
 
-        status:
-            "In Progress"
-    };
+                status:
+                    "In Progress"
+
+            };
 
 
-    try {
+            try {
 
-        const response = await fetch(
-            "http://localhost:8000/save-goal",
-            {
-                method: "POST",
+                const response =
+                    await fetch(
+                        "http://localhost:8000/save-goal",
+                        {
 
-                headers: {
-                    "Content-Type":
-                        "application/json"
-                },
+                            method: "POST",
 
-                body: JSON.stringify({
-                    goal_name:
-                        savedGoal.goalName,
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
 
-                    category:
-                        savedGoal.category,
+                            body: JSON.stringify({
 
-                    target_amount:
-                        savedGoal.targetAmount,
+                                goal_name:
+                                    savedGoal.goalName,
 
-                    duration_months:
-                        savedGoal.durationMonths,
+                                category:
+                                    savedGoal.category,
 
-                    monthly_saving:
-                        savedGoal.monthlySaving,
+                                target_amount:
+                                    savedGoal.targetAmount,
 
-                    saved_amount:
-                        savedGoal.savedAmount,
+                                duration_months:
+                                    savedGoal.durationMonths,
 
-                    status:
-                        savedGoal.status
-                })
+                                monthly_saving:
+                                    savedGoal.monthlySaving,
+
+                                saved_amount:
+                                    savedGoal.savedAmount,
+
+                                status:
+                                    savedGoal.status
+
+                            })
+
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Failed to save goal"
+                    );
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                console.log(
+                    "Database Response:",
+                    data
+                );
+
+
+                if (!data.success) {
+
+                    throw new Error(
+                        data.message ||
+                        "Goal could not be saved."
+                    );
+
+                }
+
+
+                // =================================
+                // DATABASE GOAL ID
+                // =================================
+
+                savedGoal.goalId =
+                    data.goal_id;
+
+
+                // =================================
+                // CURRENT GOAL FOR TRACKING
+                // =================================
+
+                localStorage.setItem(
+                    "savedGoal",
+                    JSON.stringify(
+                        savedGoal
+                    )
+                );
+
+
+                // =================================
+                // MY GOALS HISTORY
+                // =================================
+
+                let myGoals =
+
+                    JSON.parse(
+                        localStorage.getItem(
+                            "myGoals"
+                        ) || "[]"
+                    );
+
+
+                // Add the newly saved goal
+                // to the beginning of history
+
+                const historyGoal = {
+
+                    ...savedGoal,
+
+                    savedAt:
+                        new Date().toLocaleString(
+                            "en-IN"
+                        )
+
+                };
+
+
+                myGoals.unshift(
+                    historyGoal
+                );
+
+
+                // Store all previous goals
+
+                localStorage.setItem(
+                    "myGoals",
+                    JSON.stringify(
+                        myGoals
+                    )
+                );
+
+
+                // =================================
+                // SUCCESS
+                // =================================
+
+                alert(
+                    "Goal saved successfully!"
+                );
+
+
+                window.location.href =
+                    "tracking.html";
+
+
             }
-        );
+
+            catch (error) {
+
+                console.error(
+                    "Save Goal Error:",
+                    error
+                );
 
 
-        if (!response.ok) {
+                alert(
+                    "Could not save the goal. Please check that the backend is running."
+                );
 
-            throw new Error(
-                "Failed to save goal"
-            );
-
-        }
-
-
-        const data =
-            await response.json();
-
-
-        console.log(
-            "Database Response:",
-            data
-        );
-
-
-        if (!data.success) {
-
-            throw new Error(
-                data.message ||
-                "Goal could not be saved."
-            );
+            }
 
         }
-
-
-        // Store locally for tracking page
-        savedGoal.goalId =
-            data.goal_id;
-
-        localStorage.setItem(
-            "savedGoal",
-            JSON.stringify(
-                savedGoal
-            )
-        );
-
-
-        alert(
-            "Goal saved successfully!"
-        );
-
-
-        window.location.href =
-            "tracking.html";
-
-
-    } catch (error) {
-
-        console.error(
-            "Save Goal Error:",
-            error
-        );
-
-
-        alert(
-            "Could not save the goal. Please check that the backend is running."
-        );
-
-    }
-
-}
 
     </script>
 

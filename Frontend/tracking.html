@@ -332,16 +332,16 @@
                 </div>
 
 
-                <!-- FINAL SUMMARY BUTTON -->
+                <!-- MY GOALS BUTTON -->
 
                 <div style="text-align: center; margin-top: 30px;">
 
                     <button
                         type="button"
                         class="primary-btn"
-                        onclick="window.location.href='summary.html'"
+                        onclick="window.location.href='my-goals.html'"
                     >
-                        ✦ View Family Future Summary
+                        📂 My Goals →
                     </button>
 
                 </div>
@@ -374,132 +374,207 @@
 
     <script>
 
-    let savedGoal =
-        JSON.parse(
-            localStorage.getItem("savedGoal")
-        );
+        let savedGoal =
+            JSON.parse(
+                localStorage.getItem("savedGoal")
+            );
 
-    let analysisData =
-        JSON.parse(
-            localStorage.getItem("analysisDetails")
-        );
-
-
-    if (!savedGoal) {
-
-        alert("No saved goal found.");
-
-        window.location.href =
-            "index.html";
-    }
-
-
-    function formatCurrency(amount) {
-
-        return "₹" +
-            Number(amount).toLocaleString("en-IN");
-    }
-
-
-    async function loadGoal() {
-
-        try {
-
-            const goalId =
-                savedGoal.goalId;
-
-
-            if (!goalId) {
-
-                alert(
-                    "Goal ID not found."
-                );
-
-                return;
-            }
-
-
-            const response =
-                await fetch(
-                    "http://localhost:8000/goal/" +
-                    goalId
-                );
-
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "Failed to fetch goal."
-                );
-            }
-
-
-            const data =
-                await response.json();
-
-
-            if (!data.success) {
-
-                throw new Error(
-                    data.message ||
-                    "Goal not found."
-                );
-            }
-
-
-            // Get latest goal data from MySQL
-            savedGoal = {
-
-                goalId:
-                    data.goal.id,
-
-                goalName:
-                    data.goal.goal_name,
-
-                category:
-                    data.goal.category,
-
-                targetAmount:
-                    data.goal.target_amount,
-
-                durationMonths:
-                    data.goal.duration_months,
-
-                monthlySaving:
-                    data.goal.monthly_saving,
-
-                savedAmount:
-                    data.goal.saved_amount,
-
-                status:
-                    data.goal.status
-            };
-
-
-            // Keep a local copy for the page
-            localStorage.setItem(
-                "savedGoal",
-                JSON.stringify(savedGoal)
+        let analysisData =
+            JSON.parse(
+                localStorage.getItem("analysisDetails")
             );
 
 
-            document.getElementById(
-                "trackingGoal"
-            ).textContent =
-                savedGoal.goalName;
+        if (!savedGoal) {
+
+            alert("No saved goal found.");
+
+            window.location.href =
+                "index.html";
+        }
+
+
+        function formatCurrency(amount) {
+
+            return "₹" +
+                Number(amount).toLocaleString("en-IN");
+        }
+
+
+        async function loadGoal() {
+
+            try {
+
+                const goalId =
+                    savedGoal.goalId;
+
+
+                if (!goalId) {
+
+                    alert(
+                        "Goal ID not found."
+                    );
+
+                    return;
+                }
+
+
+                const response =
+                    await fetch(
+                        "http://localhost:8000/goal/" +
+                        goalId
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Failed to fetch goal."
+                    );
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                if (!data.success) {
+
+                    throw new Error(
+                        data.message ||
+                        "Goal not found."
+                    );
+                }
+
+
+                // Get latest goal data from MySQL
+
+                savedGoal = {
+
+                    goalId:
+                        data.goal.id,
+
+                    goalName:
+                        data.goal.goal_name,
+
+                    category:
+                        data.goal.category,
+
+                    targetAmount:
+                        data.goal.target_amount,
+
+                    durationMonths:
+                        data.goal.duration_months,
+
+                    monthlySaving:
+                        data.goal.monthly_saving,
+
+                    savedAmount:
+                        data.goal.saved_amount,
+
+                    status:
+                        data.goal.status
+                };
+
+
+                // Keep a local copy for the page
+
+                localStorage.setItem(
+                    "savedGoal",
+                    JSON.stringify(savedGoal)
+                );
+
+
+                document.getElementById(
+                    "trackingGoal"
+                ).textContent =
+                    savedGoal.goalName;
+
+
+                document.getElementById(
+                    "trackingCategory"
+                ).textContent =
+                    savedGoal.category;
+
+
+                document.getElementById(
+                    "trackingTarget"
+                ).textContent =
+                    formatCurrency(
+                        savedGoal.targetAmount
+                    );
+
+
+                document.getElementById(
+                    "trackingSaved"
+                ).textContent =
+                    formatCurrency(
+                        savedGoal.savedAmount
+                    );
+
+
+                document.getElementById(
+                    "trackingDuration"
+                ).textContent =
+                    savedGoal.durationMonths +
+                    " months";
+
+
+                updateProgress();
+
+                updateRescue();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Load Goal Error:",
+                    error
+                );
+
+
+                alert(
+                    "Could not load goal from database."
+                );
+            }
+        }
+
+
+        function updateProgress() {
+
+            const target =
+                Number(
+                    savedGoal.targetAmount
+                );
+
+
+            const saved =
+                Number(
+                    savedGoal.savedAmount
+                );
+
+
+            const remaining =
+                Math.max(
+                    target - saved,
+                    0
+                );
+
+
+            const progress =
+                target > 0
+                    ? Math.min(
+                        (saved / target) * 100,
+                        100
+                    )
+                    : 0;
 
 
             document.getElementById(
-                "trackingCategory"
-            ).textContent =
-                savedGoal.category;
-
-
-            document.getElementById(
-                "trackingTarget"
+                "trackingRemaining"
             ).textContent =
                 formatCurrency(
-                    savedGoal.targetAmount
+                    remaining
                 );
 
 
@@ -507,412 +582,375 @@
                 "trackingSaved"
             ).textContent =
                 formatCurrency(
-                    savedGoal.savedAmount
+                    saved
                 );
 
 
             document.getElementById(
-                "trackingDuration"
+                "progressText"
             ).textContent =
-                savedGoal.durationMonths +
-                " months";
-
-
-            updateProgress();
-
-            updateRescue();
-
-
-        } catch (error) {
-
-            console.error(
-                "Load Goal Error:",
-                error
-            );
-
-
-            alert(
-                "Could not load goal from database."
-            );
-        }
-    }
-
-
-    function updateProgress() {
-
-        const target =
-            Number(
-                savedGoal.targetAmount
-            );
-
-
-        const saved =
-            Number(
-                savedGoal.savedAmount
-            );
-
-
-        const remaining =
-            Math.max(
-                target - saved,
-                0
-            );
-
-
-        const progress =
-            target > 0
-            ? Math.min(
-                (saved / target) * 100,
-                100
-            )
-            : 0;
-
-
-        document.getElementById(
-            "trackingRemaining"
-        ).textContent =
-            formatCurrency(
-                remaining
-            );
-
-
-        document.getElementById(
-            "trackingSaved"
-        ).textContent =
-            formatCurrency(
-                saved
-            );
-
-
-        document.getElementById(
-            "progressText"
-        ).textContent =
-            Math.round(progress) +
-            "%";
-
-
-        document.getElementById(
-            "progressFill"
-        ).style.width =
-            progress + "%";
-
-
-        const status =
-            document.getElementById(
-                "trackingStatus"
-            );
-
-
-        const reached =
-            document.getElementById(
-                "reachedMessage"
-            );
-
-
-        const rescue =
-            document.getElementById(
-                "trackingRescue"
-            );
-
-
-        if (saved >= target) {
-
-            savedGoal.status =
-                "Goal Reached";
-
-
-            status.textContent =
-                "🎉 Goal Reached";
-
-
-            status.className =
-                "status-badge reached-status";
-
-
-            reached.style.display =
-                "block";
-
-
-            const extra =
-                saved - target;
+                Math.round(progress) +
+                "%";
 
 
             document.getElementById(
-                "reachedText"
-            ).textContent =
-                extra > 0
-                ? "Your saved amount has crossed the target by " +
-                  formatCurrency(extra) +
-                  "."
-                : "You have successfully reached your target!";
+                "progressFill"
+            ).style.width =
+                progress + "%";
 
 
-            rescue.style.display =
-                "none";
+            const status =
+                document.getElementById(
+                    "trackingStatus"
+                );
 
 
-        } else {
-
-            savedGoal.status =
-                "In Progress";
-
-
-            status.textContent =
-                "🟡 In Progress";
+            const reached =
+                document.getElementById(
+                    "reachedMessage"
+                );
 
 
-            status.className =
-                "status-badge";
+            const rescue =
+                document.getElementById(
+                    "trackingRescue"
+                );
 
 
-            reached.style.display =
-                "none";
+            if (saved >= target) {
+
+                savedGoal.status =
+                    "Goal Reached";
 
 
-            rescue.style.display =
-                "block";
-        }
+                status.textContent =
+                    "🎉 Goal Reached";
 
 
-        localStorage.setItem(
-            "savedGoal",
-            JSON.stringify(savedGoal)
-        );
-    }
+                status.className =
+                    "status-badge reached-status";
 
 
-    function updateRescue() {
-
-        if (!savedGoal) {
-            return;
-        }
+                reached.style.display =
+                    "block";
 
 
-        const target =
-            Number(savedGoal.targetAmount);
+                const extra =
+                    saved - target;
 
 
-        const duration =
-            Number(savedGoal.durationMonths);
+                document.getElementById(
+                    "reachedText"
+                ).textContent =
+                    extra > 0
+                    ? "Your saved amount has crossed the target by " +
+                      formatCurrency(extra) +
+                      "."
+                    : "You have successfully reached your target!";
 
 
-        const monthly =
-            Number(savedGoal.monthlySaving);
+                rescue.style.display =
+                    "none";
 
-
-        const saved =
-            Number(savedGoal.savedAmount);
-
-
-        const remaining =
-            Math.max(target - saved, 0);
-
-
-        // Required monthly saving from today
-        const requiredMonthly =
-            duration > 0
-                ? Math.ceil(remaining / duration)
-                : 0;
-
-
-        // Months needed with current monthly saving
-        const monthsNeeded =
-            monthly > 0
-                ? Math.ceil(remaining / monthly)
-                : 0;
-
-
-        // Target achievable with current saving
-        const achievableTarget =
-            saved + (monthly * duration);
-
-
-        // SAVE MORE
-
-        document.getElementById(
-            "trackingSaveMore"
-        ).textContent =
-            formatCurrency(requiredMonthly) +
-            " / month";
-
-
-        // TAKE MORE TIME
-
-        document.getElementById(
-            "trackingMoreTime"
-        ).textContent =
-            monthsNeeded > 0
-                ? monthsNeeded + " months"
-                : "Not available";
-
-
-        // ADJUST TARGET
-
-        document.getElementById(
-            "trackingTargetOption"
-        ).textContent =
-            formatCurrency(
-                Math.floor(achievableTarget)
-            );
-
-
-        // SMART STATUS
-
-        const rescueMessage =
-            document.getElementById(
-                "rescueMessage"
-            );
-
-
-        if (rescueMessage) {
-
-            if (remaining <= 0) {
-
-                rescueMessage.textContent =
-                    "🎉 Goal already achieved! No rescue action is required.";
-
-            } else if (monthly >= requiredMonthly) {
-
-                rescueMessage.textContent =
-                    "🟢 You are on track! Your current monthly saving can reach the goal within the selected duration.";
 
             } else {
 
-                const extraMonthly =
-                    requiredMonthly - monthly;
+                savedGoal.status =
+                    "In Progress";
 
 
-                rescueMessage.textContent =
-                    "🟡 Smart Rescue: You need about " +
-                    formatCurrency(extraMonthly) +
-                    " extra per month to reach the goal on time.";
+                status.textContent =
+                    "🟡 In Progress";
+
+
+                status.className =
+                    "status-badge";
+
+
+                reached.style.display =
+                    "none";
+
+
+                rescue.style.display =
+                    "block";
             }
-        }
-    }
 
 
-    async function updateSavedAmount() {
-
-        const input =
-            document.getElementById(
-                "newSavedAmount"
+            localStorage.setItem(
+                "savedGoal",
+                JSON.stringify(savedGoal)
             );
 
 
-        const amount =
-            Number(
-                input.value
-            );
+            // Update the same goal inside My Goals history
 
-
-        if (
-            isNaN(amount) ||
-            amount < 0
-        ) {
-
-            alert(
-                "Please enter a valid saved amount."
-            );
-
-            return;
-        }
-
-
-        const target =
-            Number(
-                savedGoal.targetAmount
-            );
-
-
-        if (amount > target) {
-
-            const confirmSave =
-                confirm(
-                    "Saved amount is greater than the target. Do you want to continue?"
+            let myGoals =
+                JSON.parse(
+                    localStorage.getItem("myGoals") || "[]"
                 );
 
 
-            if (!confirmSave) {
+            const historyIndex =
+                myGoals.findIndex(
+                    goal =>
+                        String(goal.goalId) ===
+                        String(savedGoal.goalId)
+                );
+
+
+            if (historyIndex !== -1) {
+
+                myGoals[historyIndex] = {
+                    ...myGoals[historyIndex],
+                    ...savedGoal
+                };
+
+
+                localStorage.setItem(
+                    "myGoals",
+                    JSON.stringify(myGoals)
+                );
+            }
+
+        }
+
+
+        function updateRescue() {
+
+            if (!savedGoal) {
+                return;
+            }
+
+
+            const target =
+                Number(savedGoal.targetAmount);
+
+
+            const duration =
+                Number(savedGoal.durationMonths);
+
+
+            const monthly =
+                Number(savedGoal.monthlySaving);
+
+
+            const saved =
+                Number(savedGoal.savedAmount);
+
+
+            const remaining =
+                Math.max(target - saved, 0);
+
+
+            // Required monthly saving from today
+
+            const requiredMonthly =
+                duration > 0
+                    ? Math.ceil(remaining / duration)
+                    : 0;
+
+
+            // Months needed with current monthly saving
+
+            const monthsNeeded =
+                monthly > 0
+                    ? Math.ceil(remaining / monthly)
+                    : 0;
+
+
+            // Target achievable with current saving
+
+            const achievableTarget =
+                saved + (monthly * duration);
+
+
+            // SAVE MORE
+
+            document.getElementById(
+                "trackingSaveMore"
+            ).textContent =
+                formatCurrency(requiredMonthly) +
+                " / month";
+
+
+            // TAKE MORE TIME
+
+            document.getElementById(
+                "trackingMoreTime"
+            ).textContent =
+                monthsNeeded > 0
+                    ? monthsNeeded + " months"
+                    : "Not available";
+
+
+            // ADJUST TARGET
+
+            document.getElementById(
+                "trackingTargetOption"
+            ).textContent =
+                formatCurrency(
+                    Math.floor(achievableTarget)
+                );
+
+
+            // SMART STATUS
+
+            const rescueMessage =
+                document.getElementById(
+                    "rescueMessage"
+                );
+
+
+            if (rescueMessage) {
+
+                if (remaining <= 0) {
+
+                    rescueMessage.textContent =
+                        "🎉 Goal already achieved! No rescue action is required.";
+
+                } else if (monthly >= requiredMonthly) {
+
+                    rescueMessage.textContent =
+                        "🟢 You are on track! Your current monthly saving can reach the goal within the selected duration.";
+
+                } else {
+
+                    const extraMonthly =
+                        requiredMonthly - monthly;
+
+
+                    rescueMessage.textContent =
+                        "🟡 Smart Rescue: You need about " +
+                        formatCurrency(extraMonthly) +
+                        " extra per month to reach the goal on time.";
+                }
+            }
+        }
+
+
+        async function updateSavedAmount() {
+
+            const input =
+                document.getElementById(
+                    "newSavedAmount"
+                );
+
+
+            const amount =
+                Number(
+                    input.value
+                );
+
+
+            if (
+                isNaN(amount) ||
+                amount < 0
+            ) {
+
+                alert(
+                    "Please enter a valid saved amount."
+                );
 
                 return;
             }
-        }
 
 
-        try {
-
-            const response =
-                await fetch(
-                    "http://localhost:8000/goal/" +
-                    savedGoal.goalId +
-                    "/saved-amount",
-                    {
-                        method: "PUT",
-
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
-
-                        body: JSON.stringify({
-                            saved_amount:
-                                amount
-                        })
-                    }
+            const target =
+                Number(
+                    savedGoal.targetAmount
                 );
 
 
-            if (!response.ok) {
+            if (amount > target) {
 
-                throw new Error(
-                    "Failed to update saved amount."
-                );
+                const confirmSave =
+                    confirm(
+                        "Saved amount is greater than the target. Do you want to continue?"
+                    );
+
+
+                if (!confirmSave) {
+
+                    return;
+                }
             }
 
 
-            const data =
-                await response.json();
+            try {
+
+                const response =
+                    await fetch(
+                        "http://localhost:8000/goal/" +
+                        savedGoal.goalId +
+                        "/saved-amount",
+                        {
+                            method: "PUT",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                saved_amount:
+                                    amount
+                            })
+                        }
+                    );
 
 
-            if (!data.success) {
+                if (!response.ok) {
 
-                throw new Error(
-                    data.message ||
-                    "Saved amount update failed."
+                    throw new Error(
+                        "Failed to update saved amount."
+                    );
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                if (!data.success) {
+
+                    throw new Error(
+                        data.message ||
+                        "Saved amount update failed."
+                    );
+                }
+
+
+                input.value = "";
+
+
+                alert(
+                    "Saved amount updated successfully!"
+                );
+
+
+                // Reload latest data from MySQL
+
+                await loadGoal();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Update Saved Amount Error:",
+                    error
+                );
+
+
+                alert(
+                    "Could not update saved amount in database."
                 );
             }
-
-
-            input.value = "";
-
-
-            alert(
-                "Saved amount updated successfully!"
-            );
-
-
-            // Reload latest data from MySQL
-            await loadGoal();
-
-
-        } catch (error) {
-
-            console.error(
-                "Update Saved Amount Error:",
-                error
-            );
-
-
-            alert(
-                "Could not update saved amount in database."
-            );
         }
-    }
 
 
-    loadGoal();
+        loadGoal();
 
-</script>
+    </script>
 
 </body>
 
