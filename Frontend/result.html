@@ -799,12 +799,19 @@
 
                 if (!response.ok) {
 
-                    throw new Error(
-                        "Failed to save goal"
-                    );
+                      const errorText =
+                      await response.text();
 
-                }
+                      console.error(
+                         "Backend Error:",
+                          errorText
+                       );
 
+                       throw new Error(
+                         'HTTP ${response.status}: ${errorText}'
+                       );
+
+}
 
                 const data =
                     await response.json();
@@ -913,7 +920,7 @@
 
 
                 alert(
-                    "Could not save the goal. Please check that the backend is running."
+                   "Save failed: " + error.message
                 );
 
             }
