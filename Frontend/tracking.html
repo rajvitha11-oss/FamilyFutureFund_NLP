@@ -421,8 +421,7 @@
 
                 const response =
                     await fetch(
-                        "http://localhost:8000/goal/" +
-                        goalId
+                        "https://familyfuturefund-backend.onrender.com/goal/" + goalId,
                     );
 
 
@@ -880,9 +879,8 @@
 
                 const response =
                     await fetch(
-                        "http://localhost:8000/goal/" +
-                        savedGoal.goalId +
-                        "/saved-amount",
+                        
+                        "https://familyfuturefund-backend.onrender.com/goal/" + savedGoal.goalId + "/saved-amount",
                         {
                             method: "PUT",
 
