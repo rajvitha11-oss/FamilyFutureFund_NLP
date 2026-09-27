@@ -2,12 +2,17 @@ import os
 import mysql.connector
 
 db = mysql.connector.connect(
-    host=os.getenv("DB_HOST"),
-    port=int(os.getenv("DB_PORT")),
-    user=os.getenv("DB_USER"),
-    password=os.getenv("DB_PASSWORD"),
-    database=os.getenv("DB_NAME"),
-    ssl_disabled=False
+
+    host="familyfuturefund-db-family-future-fund.c.aivencloud.com",
+
+    port=28994,
+
+    user="avnadmin",
+
+    password=os.getenv("AIVEN_DB_PASSWORD"),
+
+    database="defaultdb"
+
 )
 
 cursor = db.cursor()

@@ -12,7 +12,6 @@
 
 <body>
 
-
     <!-- ==============================
          NAVBAR
     =============================== -->
@@ -53,7 +52,7 @@
 
     <!-- ==============================
          MAIN RESULT PAGE
-    =============================== -->
+    ============================== -->
 
     <main>
 
@@ -83,7 +82,7 @@
 
             <!-- ==============================
                  GOAL SUMMARY
-            =============================== -->
+            ============================== -->
 
             <div class="result-goal-card">
 
@@ -332,41 +331,43 @@
 
 
             <!-- ==============================
-     SAVE GOAL + PERSONALIZED RECOMMENDATIONS
-============================== -->
+                 SAVE GOAL + PERSONALIZED RECOMMENDATIONS
+            ============================== -->
 
-    <div class="result-action">
+            <div class="result-action">
 
-    <!-- SAVE THIS GOAL -->
-    <button
-        class="primary-btn"
-        onclick="saveGoal()"
-    >
-        Save This Goal
-        <span>→</span>
-    </button>
+                <!-- SAVE THIS GOAL -->
 
-    <p>
-        Save this plan to track your progress later.
-    </p>
+                <button
+                    class="primary-btn"
+                    onclick="saveGoal()"
+                >
+                    Save This Goal
+                    <span>→</span>
+                </button>
+
+                <p>
+                    Save this plan to track your progress later.
+                </p>
 
 
-    <!-- PERSONALIZED RECOMMENDATIONS -->
-    <button
-        class="primary-btn"
-        type="button"
-        onclick="window.location.href='recommendations.html'"
-        style="margin-top: 18px;"
-    >
-        💡 Personalized Recommendations
-        <span>→</span>
-    </button>
+                <!-- PERSONALIZED RECOMMENDATIONS -->
 
-    <p>
-        Get a realistic target based on your saving capacity.
-    </p>
+                <button
+                    class="primary-btn"
+                    type="button"
+                    onclick="window.location.href='recommendations.html'"
+                    style="margin-top: 18px;"
+                >
+                    💡 Personalized Recommendations
+                    <span>→</span>
+                </button>
 
-</div>
+                <p>
+                    Get a realistic target based on your saving capacity.
+                </p>
+
+            </div>
 
         </section>
 
@@ -758,7 +759,9 @@
 
                 const response =
                     await fetch(
-                        "https://familyfuturefund-backend.onrender.com/save-goal",
+
+                       "https://familyfuturefund-backend.onrender.com/save-goal",
+
                         {
 
                             method: "POST",
@@ -794,24 +797,26 @@
                             })
 
                         }
+
                     );
 
 
                 if (!response.ok) {
 
-                      const errorText =
-                      await response.text();
+                    const errorText =
+                        await response.text();
 
-                      console.error(
-                         "Backend Error:",
-                          errorText
-                       );
+                    console.error(
+                        "Backend Error:",
+                        errorText
+                    );
 
-                       throw new Error(
-                         'HTTP ${response.status}: ${errorText}'
-                       );
+                    throw new Error(
+                        `HTTP ${response.status}: ${errorText}`
+                    );
 
-}
+                }
+
 
                 const data =
                     await response.json();
@@ -866,9 +871,6 @@
                     );
 
 
-                // Add the newly saved goal
-                // to the beginning of history
-
                 const historyGoal = {
 
                     ...savedGoal,
@@ -885,8 +887,6 @@
                     historyGoal
                 );
 
-
-                // Store all previous goals
 
                 localStorage.setItem(
                     "myGoals",
@@ -920,7 +920,8 @@
 
 
                 alert(
-                   "Save failed: " + error.message
+                    "Save failed: " +
+                    error.message
                 );
 
             }
